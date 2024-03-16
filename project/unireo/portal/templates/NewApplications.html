@@ -1,0 +1,90 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block content %}
+
+<div class="page-bar">
+    <div class="page-title-breadcrumb">
+        <div class=" pull-left">
+            <div class="page-title">Applications</div>
+        </div>
+        <ol class="breadcrumb page-breadcrumb pull-right">
+            <li><i class="fa fa-home"></i>&nbsp;<a class="parent-item"
+                    href="/unihome">Home</a>&nbsp;<i class="fa fa-angle-right"></i>
+            </li>
+           
+            <li class="active">New Applications</li>
+        </ol>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="tabbable-line">
+
+            <div class="tab-content">
+                <div class="tab-pane active fontawesome-demo" id="tab1">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="card card-box">
+                                <div class="card-head">
+                                    <header class="p-4">New Applications</header>
+
+                                </div>
+                                <div class="card-body ">
+                                    <div class="row">
+                                        <div class="col-md-6 col-sm-6 col-6">
+                                            <div class="btn-group">
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="table-scrollable">
+                                        <table
+                                            class="table table-striped table-bordered table-hover table-checkable order-column valign-middle"
+                                            id="example4">
+                                            <thead>
+                                                <tr>
+                                                    <th></th>
+                                                    <th> No </th>
+                                                    <th> Name </th>
+                                                    <th> Program </th>
+                                                    <th> Nationality </th>
+                                                    <th> Intake </th>
+                                                    <th>Application Date</th>
+                                                    <th> Status </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr class="odd gradeX">
+                                                    {% for i in stddetail %}
+                                                    <td class="patient-img">
+                                                        <img src="https://image.shutterstock.com/image-photo/portrait-happy-fashionable-handsome-man-260nw-600200732.jpg"
+                                                            alt="">
+                                                    </td>
+                                                    <td class="left">{{ forloop.counter }}</td>
+                                                        <td><a href="/student/overview/{{i.stdname}}">{{i.stdname}}</a></td>
+                                                        <td class="left">{{i.program}}</td>
+                                                        <td> India </td>
+                                                        <td>Jan 2020 </td>
+                                                        <td class="left">{{i.date}}</td>
+                                                        <td>{{i.status}}</td>
+                                                        </td>
+                                                    </td>
+                                                    {% endfor %}
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,481 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<!-- BEGIN HEAD -->
+
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta content="width=device-width, initial-scale=1" name="viewport" />
+	<meta name="description" content="Responsive Admin Template" />
+	<meta name="author" content="SmartUniversity" />
+	<title>Apply Uni</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+		integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+	<!-- google font -->
+
+
+	<link rel="stylesheet"
+		href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.5.5/css/simple-line-icons.min.css"
+		integrity="sha512-QKC1UZ/ZHNgFzVKSAhV5v5j73eeL9EEN289eKAEFaAjgAiobVAnVv/AGuPbXsKl1dNoel3kNr6PYnSiTzVVBCw=="
+		crossorigin="anonymous" />
+
+	<link href="{% static 'fonts/material-design-icons/material-icon.css' %}" rel="stylesheet" type="text/css" />
+	<!--bootstrap -->
+	<link href="{% static 'assets/plugins/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet" type="text/css" />
+	<link href="{% static 'assets/plugins/summernote/summernote.css' %}" rel="stylesheet">
+	<!-- Material Design Lite CSS -->
+	<link rel="stylesheet" href="{% static 'assets/plugins/material/material.min.css' %}">
+	<link rel="stylesheet" href="{% static 'assets/css/material_style.css' %}">
+	<!-- inbox style -->
+	<link href="{% static 'assets/css/pages/inbox.min.css' %}" rel="stylesheet" type="text/css" />
+	<!-- Theme Styles -->
+	<link href="{% static 'assets/css/theme/light/theme_style.css' %}" rel="stylesheet" id="rt_style_components"
+		type="text/css" />
+	<link href="{% static 'assets/css/plugins.min.css' %}" rel="stylesheet" type="text/css" />
+	<link href="{% static 'assets/css/theme/light/style.css' %}" rel="stylesheet" type="text/css" />
+	<link href="{% static 'assets/css/responsive.css' %}" rel="stylesheet" type="text/css" />
+	<link href="{% static 'assets/css/theme/light/theme-color.css' %}" rel="stylesheet" type="text/css" />
+	<!--end-->
+	<link href="{% static 'assets/plugins/dropzone/dropzone.css' %}" rel="stylesheet" media="screen">
+	<!-- Date Time item CSS -->
+	<link rel="stylesheet" href="{% static 'assets/plugins/flatpicker/css/flatpickr.min.css' %}" />
+	<link rel="stylesheet"
+		href="{% static 'assets/plugins/datatables/plugins/bootstrap/dataTables.bootstrap4.min.css' %}">
+	<!-- favicon -->
+	<link rel="shortcut icon" href="{% static 'images/favicon.png' %}" />
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+	<style>
+		* {
+			font-family: 'Roboto', sans-serif;
+			 !important
+		}
+
+		.new {
+			outline: none;
+		}
+		.mdl-textfield__label,.control-label{
+			font-size: 14px !important;
+			font-weight: 400 !important;
+            color: #154770 !important;
+		}
+	</style>
+
+</head>
+<!-- END HEAD -->
+
+<body
+	class="page-header-fixed sidemenu-closed-hidelogo page-content-white page-md header-white white-sidebar-color logo-indigo">
+	<div class="page-wrapper">
+		<!-- start header -->
+		<div class="page-header navbar navbar-fixed-top">
+			<div class="page-header-inner ">
+				<!-- logo start -->
+				<div class="page-logo">
+					<a href="/">
+						<span><img src="{% static 'images/logo3.png' %}"
+								style="width: 50px;height: 45px;left:-10px;position: relative;" /></span>
+						<span class="logo-default">Unireo</span> </a>
+				</div>
+				<!-- logo end -->
+				<ul class="nav navbar-nav navbar-left in">
+					<li><a href="#" class="menu-toggler sidebar-toggler"><i class="icon-menu"></i></a></li>
+				</ul>
+
+				<!-- start mobile menu -->
+				<a class="menu-toggler responsive-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse">
+					<span></span>
+				</a>
+				<!-- end mobile menu -->
+				<!-- start header menu -->
+				<div class="top-menu">
+					<ul class="nav navbar-nav pull-right">
+
+
+						<!-- start notification dropdown -->
+						<li class="dropdown dropdown-extended dropdown-notification" id="header_notification_bar">
+							<a class="dropdown-toggle" data-bs-toggle="dropdown" data-hover="dropdown"
+								data-close-others="true">
+								<i class="fa fa-bell-o"></i>
+								<span class="badge headerBadgeColor1"> 6 </span>
+							</a>
+							<ul class="dropdown-menu">
+								<li class="external">
+									<h3><span class="bold">Notifications</span></h3>
+									<span class="notification-label purple-bgcolor">New 6</span>
+								</li>
+								<li>
+									<ul class="dropdown-menu-list small-slimscroll-style" data-handle-color="#637283">
+										<li>
+											<a href="javascript:;">
+												<span class="time">just now</span>
+												<span class="details">
+													<span class="notification-icon circle deepPink-bgcolor"><i
+															class="fas fa-check"></i></span>
+													Congratulations!. </span>
+											</a>
+										</li>
+										<li>
+											<a href="javascript:;">
+												<span class="time">3 mins</span>
+												<span class="details">
+													<span class="notification-icon circle purple-bgcolor"><i
+															class="fas fa-user o"></i></span>
+													<b>John Micle </b>is now following you. </span>
+											</a>
+										</li>
+										<li>
+											<a href="javascript:;">
+												<span class="time">7 mins</span>
+												<span class="details">
+													<span class="notification-icon circle blue-bgcolor"><i
+															class="fa fa-comments-o"></i></span>
+													<b>Sneha Jogi </b>sent you a message. </span>
+											</a>
+										</li>
+										<li>
+											<a href="javascript:;">
+												<span class="time">12 mins</span>
+												<span class="details">
+													<span class="notification-icon circle pink"><i
+															class="fa fa-heart"></i></span>
+													<b>Ravi Patel </b>like your photo. </span>
+											</a>
+										</li>
+										<li>
+											<a href="javascript:;">
+												<span class="time">15 mins</span>
+												<span class="details">
+													<span class="notification-icon circle yellow"><i
+															class="fas fa-warning"></i></span> Warning! </span>
+											</a>
+										</li>
+										<li>
+											<a href="javascript:;">
+												<span class="time">10 hrs</span>
+												<span class="details">
+													<span class="notification-icon circle red"><i
+															class="fas fa-times"></i></span> Application error. </span>
+											</a>
+										</li>
+									</ul>
+									<div class="dropdown-menu-footer">
+										<a href="javascript:void(0)"> All notifications </a>
+									</div>
+								</li>
+							</ul>
+						</li>
+						<!-- end notification dropdown -->
+
+						<!-- start manage user dropdown -->
+						<li class="dropdown dropdown-user">
+							<a class="dropdown-toggle" data-bs-toggle="dropdown" data-hover="dropdown"
+								data-close-others="true">
+								<img alt="" class="img-circle " src="../assets/img/dp.jpg" />
+								<span class="username username-hide-on-mobile" style="font-size: 18px;text-transform:uppercase">{{request.session.Firstname2}} </span>
+								<i class="fa fa-angle-down"></i>
+							</a>
+							<ul class="dropdown-menu dropdown-menu-default">
+								
+
+								<li class="divider"> </li>
+								<li>
+									<a href="/agentlogout">
+										<i class="icon-logout"></i> Log Out </a>
+								</li>
+							</ul>
+						</li>
+						<!-- end manage user dropdown -->
+
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- end header -->
+
+		<!-- start page container -->
+		<div class="page-container">
+			<!-- start sidebar menu -->
+			<div class="sidebar-container">
+				<div class="sidemenu-container navbar-collapse collapse fixed-menu">
+					<div id="remove-scroll" class="left-sidemenu">
+						<ul class="sidemenu  page-header-fixed slimscroll-style" data-keep-expanded="false"
+							data-auto-scroll="true" data-slide-speed="200" style="padding-top: 20px">
+							<li class="sidebar-toggler-wrapper hide">
+								<div class="sidebar-toggler">
+									<span></span>
+								</div>
+							</li>
+							<li class="sidebar-user-panel">
+								<div class="user-panel">
+									<div class="pull-left image">
+										<img src="https://images.theconversation.com/files/176677/original/file-20170704-13632-yt4lfx.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=926&fit=clip"
+											class="img-circle user-img-image" alt="img" style="border-radius: 50%;height:65px;padding:2px;border:1px solid grey;margin-left:70px">
+									</div><br><br><br>
+									<div class="pull-left info">
+										<p style="font-family: 'Roboto', sans-serif; text-transform:capitalize;font-size:20px;margin-left:60px;">{{request.session.Firstname2}}</p>
+									</div>
+								</div>
+							</li>
+							<li class="nav-item ">
+								<a href="/agent/home" class="nav-link nav-toggle">
+									<i class="material-icons">dashboard</i>
+									<span class="title" style="font-family: 'Montserrat', sans-serif;">Home</span>
+
+								</a>
+
+							</li>
+							<li class="nav-item ">
+								<a href="/Cdetails" class="nav-link nav-toggle">
+									<i class="material-icons">dashboard</i>
+									<span class="title" style="font-family: 'Montserrat', sans-serif;">Basic information</span>
+
+								</a>
+
+							</li>
+							<li class="nav-item">
+								<a href="#" class="nav-link nav-toggle"><i class="material-icons">group</i>
+									<span class="title">Applications</span><span class="arrow"></span></a>
+								<ul class="sub-menu">
+									<li class="nav-item">
+										<a href="/agent/application" class="nav-link "> <span class="title">All
+												Application</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="/agent/newapplicant" class="nav-link "> <span class="title">Accepted
+												Applications</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="/agent/inprogress" class="nav-link "> <span class="title">In Progress
+
+												Applications</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="/agent/rejected" class="nav-link "> <span class="title">Rejected
+												Applications</span>
+										</a>
+									</li>
+								</ul>
+							</li>
+							<li class="nav-item ">
+								<a href="/agent/viewcommision" class="nav-link nav-toggle">
+									<i class="material-icons"><span class="material-icons">
+											add_circle
+										</span></i>
+									<span class="title" style="font-family: 'Montserrat', sans-serif;">View 
+										Commision
+									</span>
+
+								</a>
+
+							</li>
+							<li class="nav-item ">
+								<a href="/agent/personal" class="nav-link nav-toggle">
+									<i class="material-icons"><span class="material-icons">
+											add_circle
+										</span></i>
+									<span class="title" style="font-family: 'Montserrat', sans-serif;">Add New
+										Applicant</span>
+
+								</a>
+
+							</li>
+							
+							<li class="nav-item">
+								<a href="/agent/support" class="nav-link nav-toggle">
+									<i class="material-icons">help</i>
+									<span class="title">Help</span>
+
+								</a>
+
+							</li>
+							<li class="nav-item">
+								<a href="/agent/security" class="nav-link nav-toggle"> <i
+										class="material-icons">settings</i>
+									<span class="title">settings</span>
+								</a>
+							</li>
+
+
+
+
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!-- end sidebar menu -->
+			<div class="page-content-wrapper">
+				<div class="page-content">
+					{% block content %}
+					{% endblock %}
+				</div>
+
+			</div>
+
+			<!-- start footer -->
+
+			<!-- end footer -->
+		</div>
+		<!-- start js include path -->
+		<script src="{% static 'Date.js' %}" ></script>
+             		
+		<script language="javascript">
+			populateCountries("country", "state"); // first parameter is id of country drop-down and second parameter is id of state drop-down
+			populateCountries("country2");
+			populateCountries("country2");
+		  </script> 
+		  
+		  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		  <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/11.0.9/js/intlTelInput.js"></script>
+		  <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/11.0.9/js/intlTelInput.min.js"></script>
+		  <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/11.0.9/js/utils.js"></script>
+		<script>
+			  
+			var telInput = $("#phone"),
+			  errorMsg = $("#error-msg"),
+			  validMsg = $("#valid-msg");
+			
+			// initialise plugin
+			telInput.intlTelInput({
+			
+			  allowExtensions: true,
+			  formatOnDisplay: true,
+			  autoFormat: true,
+			  autoHideDialCode: true,
+			  autoPlaceholder: true,
+			  defaultCountry: "auto",
+			  ipinfoToken: "yolo",
+			
+			  nationalMode: false,
+			  numberType: "MOBILE",
+			  //onlyCountries: ['us', 'gb', 'ch', 'ca', 'do'],
+			  preferredCountries: ['sa', 'ae', 'qa','om','bh','kw','ma'],
+			  preventInvalidNumbers: true,
+			  separateDialCode: true,
+			  initialCountry: "auto",
+			  geoIpLookup: function(callback) {
+			  $.get("http://ipinfo.io", function() {}, "jsonp").always(function(resp) {
+				var countryCode = (resp && resp.country) ? resp.country : "";
+				callback(countryCode);
+			  });
+			},
+			   utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/11.0.9/js/utils.js"
+			});
+			
+			var reset = function() {
+			  telInput.removeClass("error");
+			  errorMsg.addClass("hide");
+			  validMsg.addClass("hide");
+			};
+			
+			// on blur: validate
+			telInput.blur(function() {
+			  reset();
+			  if ($.trim(telInput.val())) {
+				if (telInput.intlTelInput("isValidNumber")) {
+				  validMsg.removeClass("hide");
+				} else {
+				  telInput.addClass("error");
+				  errorMsg.removeClass("hide");
+				}
+			  }
+			});
+			
+			// on keyup / change flag: reset
+			telInput.on("keyup change", reset);
+			
+			
+			
+					  </script>
+		<script src="{% static 'assets/plugins/jquery/jquery.min.js' %}"></script>
+		<script src="{% static 'assets/plugins/popper/popper.js' %}"></script>
+		<script src="{% static 'assets/plugins/jquery-blockui/jquery.blockui.min.js' %}"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery-slimScroll/1.3.8/jquery.slimscroll.js"
+			integrity="sha512-37SbZHAnGzLuZV850k61DfQdZ5cnahfloYHizjpEwDgZGw49+D6oswdI8EX3ogzKelDLjckhvlK0QZsY/7oxYg=="
+			crossorigin="anonymous"></script>
+		<!-- bootstrap -->
+		<script src="{% static 'assets/plugins/bootstrap/js/bootstrap.min.js' %}"></script>
+		<script src="{% static 'assets/plugins/bootstrap-switch/js/bootstrap-switch.min.js' %}"></script>
+		<script src="{% static 'assets/plugins/sparkline/jquery.sparkline.js' %}"></script>
+		<script src="{% static 'assets/js/pages/sparkline/sparkline-data.js' %}"></script>
+		<!-- Common js-->
+		<script src="{% static 'assets/js/app.js' %}"></script>
+		<script src="{% static 'assets/js/layout.js' %}"></script>
+		<script src="{% static 'assets/js/theme-color.js' %}"></script>
+		<!-- material -->
+		<script src="{% static 'assets/plugins/material/material.min.js' %}"></script>
+
+		<script src="{% static 'assets/js/pages/material-select/getmdl-select.js' %}"></script>
+		<script src="{% static 'assets/plugins/flatpicker/js/flatpicker.min.js' %}"></script>
+		<script src="{% static 'assets/js/pages/date-time/date-time.init.js' %}"></script>
+
+		<!-- summernote -->
+		<script src="{% static 'assets/plugins/summernote/summernote.js' %}"></script>
+		<script src="{% static 'assets/js/pages/summernote/summernote-data.js' %}"></script>
+		<!-- end js include path -->
+		<script src="{% static 'assets/plugins/dropzone/dropzone.js' %}"></script>
+		<script src="{% static 'assets/plugins/dropzone/dropzone-call.js' %}"></script>
+
+		<script src="{% static 'assets/plugins/datatables/jquery.dataTables.min.js' %}"></script>
+		<script src="{% static 'assets/plugins/datatables/plugins/bootstrap/dataTables.bootstrap4.min.js' %}"></script>
+		<script src="{% static 'assets/js/pages/table/table_data.js'%}"></script>
+
+
+		<script>
+			$(document).ready(function () {
+				var app1 = '<div><div class="col-lg-6 p-t-20">	  <input type="checkbox" name="Testeng[]" value="1" /> <label>Ielts</label> <input type="checkbox" name="Testeng[]" value="2" /><label>Tofel</label> </div><div class="col-lg-6 p-t-20"> <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width" > <input class="mdl-textfield__input" type="date" id="date" name="Yeareng[]"/>  </div> </div> <div class="col-lg-6 p-t-20"> <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width"> <input class="mdl-textfield__input" type="text" id="txtRollNo" name="Overallscoreeng[]"/><label class="mdl-textfield__label">Overall Score</label> </div> </div> <div class="col-lg-6 p-t-20"> <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width" > <input class="mdl-textfield__input" type="file" id="txtLasttName" name="Uploadeng[]" /> <label class="mdl-textfield__label"></label> </div> </div> </div>'
+				$(".addenglish").click(function () {
+					$("#addenglish").append(app1);
+				});
+			});
+		</script>
+		<script>
+			$(document).ready(function () {
+				var add2 = '<div class="col-lg-6 p-t-20"><input type="checkbox" name="Testad[]" value="1" /> <label>GMAT</label>	<input type="checkbox" name="Testad[]" value="2" /><label>GRE</label></div> <div class="col-lg-6 p-t-20"><div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width"><input class="mdl-textfield__input" type="date" id="txtRollNo" name="Yearad[]" /><label class="mdl-textfield__label"></label></div></div><div class="col-lg-6 p-t-20"><div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width"><input class="mdl-textfield__input" type="text" id="txtRollNo" name="Overallscoread[]"/><label class="mdl-textfield__label">Overall Score</label></div></div><div class="col-lg-6 p-t-20"><div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width"><input class="mdl-textfield__input" type="file" id="txtLasttName" name="Uploadad[]" /> <label class="mdl-textfield__label"></label></div></div>'
+				$(".addgre").click(function () {
+					$("#addgre").append(add2);
+				});
+			});
+		</script>
+		<script>
+			$(document).ready(function () {
+				var add2 = '<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width"><input class="mdl-textfield__input new" type="text" id="designation"><label class="mdl-textfield__label">Semster 1</label></div>'
+				$(".addsem1").click(function () {
+					$("#newsem").append(add2);
+				});
+			});
+		</script>
+		<script>
+			$(document).ready(function () {
+				var add2 = '<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width is-upgraded "><input class="mdl-textfield__input out new" type="text" id="designation"><label class="mdl-textfield__label">Semster 2</label></div>'
+				$(".addsem2").click(function () {
+					$("#sem2").append(add2);
+				});
+			});
+		</script>
+		<script>
+			$(document).ready(function () {
+				var add2 = '<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width"><input class="mdl-textfield__input new" type="text" id="txtParentName" name="Req[]" ><label class="mdl-textfield__label"></label></div>'
+				$(".addreq").click(function () {
+					$("#requi").append(add2);
+				});
+			});
+		</script>
+		<script>
+			$(document).ready(function () {
+				var add2 = '<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width"><input class="mdl-textfield__input new" type="text" id="txtParentName" name="Features[]" ><label class="mdl-textfield__label"></label></div>'
+				$(".addfea").click(function () {
+					$("#feature").append(add2);
+				});
+			});
+		</script>
+
+</body>
+
+</html>

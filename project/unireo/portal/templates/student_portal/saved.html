@@ -1,0 +1,53 @@
+{% extends 'student_portal/student_nav.html' %} {% block content %}
+<div class="page-bar">
+  <div class="page-title-breadcrumb">
+    <div class="pull-left">
+      <div class="page-title">Saved Universities</div>
+    </div>
+    <ol class="breadcrumb page-breadcrumb pull-right">
+      <li>
+        <i class="fa fa-home"></i>&nbsp;<a class="parent-item" href="/student/home">Home</a>&nbsp;<i class="fa fa-angle-right"></i>
+      </li>
+      <li class="active">Saved</li>
+    </ol>
+  </div>
+</div>
+
+<div class="row">
+  
+  {% for i in saved_univ %}
+  <div class="col-md-4">
+    <div class="card card-box">
+      
+      <div class="card-body no-padding ">
+      
+        <div class="doctor-profile">
+          <img src="https://media.gettyimages.com/photos/columbia-university-college-walk-picture-id157195136?s=612x612" class="doctor-pic" alt="">
+          <div class="profile-usertitle">
+            
+            <div class="doctor-name">{{i.Universityname}} </div>
+            <div class="name-center"> {{i.Location}} </div>
+          </div>
+          <p>A-103, shyam gokul flats, Mahatma Road <br />{{i.Location}}</p>
+          <div>
+            <p><i class="fa fa-phone"></i><a href="{{i.Phonenumber}}"> {{i.Phonenumber}}</a></p>
+          </div>
+          
+          <div class="profile-userbuttons">
+            <a href="/overview/{{i.Universityname}}" class="btn btn-circle blue-bgcolor btn-sm">Apply</a>
+              <a href="/student/saved/{{i.Universityname}}" class="btn btn-circle deepPink-bgcolor btn-sm">Remove
+                </a>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+
+  
+  
+  
+  {% endfor %}
+</div>
+{% endblock %}

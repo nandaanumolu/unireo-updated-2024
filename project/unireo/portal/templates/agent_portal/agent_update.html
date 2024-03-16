@@ -1,0 +1,102 @@
+{% extends 'agent_portal/nav.html' %}
+{% block content %}
+<div class="page-bar">
+    <div class="page-title-breadcrumb">
+        <div class=" pull-left">
+            <div class="page-title">Forms</div>
+        </div>
+        <ol class="breadcrumb page-breadcrumb pull-right">
+            <li><i class="fa fa-home"></i>&nbsp;<a class="parent-item" href="index.html">Home</a>&nbsp;<i
+                    class="fa fa-angle-right"></i>
+            </li>
+
+            <li class="active">Over View</li>
+        </ol>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <div class="card-box">
+            <div class="card-head">
+                <header class="p-4">Consulatancy Details</header>
+
+
+            </div>
+            <form action="/stdcour" method="post">
+                {% csrf_token %}
+                <div class="card-body row">
+                    <div class="card-body row">
+
+                       
+                        
+
+                        <div class="col-lg-6 p-t-20">
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+                                <input class="mdl-textfield__input" type="text" id="txtRollNo" name="pcoun1"
+                                    value="{{value.pcoun1}}" />
+                                <label class="mdl-textfield__label">Agent Institution</label>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 p-t-20">
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+                                <input class="mdl-textfield__input" type="text" id="txtLasttName" name="pcoun2"
+                                    value="{{value.pcoun2}}" />
+                                <label class="mdl-textfield__label">Licence Number</label>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 p-t-20">
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+                                <input class="mdl-textfield__input" type="text" id="txtLasttName" name="pcoun3"
+                                    value="{{value.pcoun3}}" />
+                                <label class="mdl-textfield__label">country</label>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 p-t-20">
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+                                <input class="mdl-textfield__input" type="text" id="txtLasttName" name="pcour4"
+                                    value="{{value.pcour4}}" />
+                                <label class="mdl-textfield__label">State</label>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 p-t-20">
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+                                <input class="mdl-textfield__input" type="text" id="txtLasttName" name="pcour5"
+                                    value="{{value.pcour5}}" />
+                                <label class="mdl-textfield__label">E-mail</label>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 p-t-20">
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+                                <input class="mdl-textfield__input" type="text" id="txtLasttName" name="pcour5"
+                                    value="{{value.pcour5}}" />
+                                <label class="mdl-textfield__label">Phone Number</label>
+                            </div>
+                        </div>
+                        <div class="col-lg-12 p-t-20">
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+                                <input class="mdl-textfield__input" type="text" id="txtLasttName" name="pcour6"
+                                    value="{{value.pcour6}}" />
+                                <label class="mdl-textfield__label">Address</label>
+                            </div>
+                        </div>
+
+
+                        <div class="col-lg-12 p-t-20 text-center">
+                            <a href="/stdpro">
+                                <button type="button"
+                                    class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect m-b-10 m-r-20 btn-pink">
+                                    Previous
+                                </button>
+                            </a>
+                            <button type="submit" onclick="myguru()"
+                                class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect m-b-10 btn-default">
+                                Submit
+                            </button>
+                        </div>
+            </form>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+{% endblock %}

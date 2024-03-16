@@ -1,0 +1,150 @@
+{% extends 'index.html' %} {% block content %}
+<div>
+  <div class="page-bar">
+    <div class="page-title-breadcrumb">
+      <div class="pull-left">
+        <div class="page-title" style="letter-spacing: 3px">Dashboard</div>
+      </div>
+      <ol class="breadcrumb page-breadcrumb pull-right">
+        <li>
+          <i class="fa fa-home"></i>&nbsp;<a class="parent-item" href="/unihome"
+            >Home</a
+          >&nbsp;<i class="fa fa-angle-right"></i>
+        </li>
+        <li class="active">Dashboard</li>
+      </ol>
+    </div>
+  </div>
+  <!-- start widget -->
+  <div class="state-overview">
+    <div class="row">
+      <div class="col-xl-3 col-md-6 col-12">
+        <div class="info-box bg-b-green">
+          <span class="info-box-icon push-bottom"
+            ><i class="material-icons">group</i></span
+          >
+          <div class="info-box-content">
+            <span class="info-box-text">Accepted</span>
+            <span class="info-box-number">{{accept}}</span>
+            <div class="progress">
+              <div class="progress-bar" style="width: {{accper}}%"></div>
+            </div>
+            <span class="progress-description">  </span>
+          </div>
+          <!-- /.info-box-content -->
+        </div>
+        <!-- /.info-box -->
+      </div>
+      <!-- /.col -->
+      <div class="col-xl-3 col-md-6 col-12">
+        <div class="info-box bg-b-yellow">
+          <span class="info-box-icon push-bottom"
+            ><i class="material-icons">person</i></span
+          >
+          <div class="info-box-content">
+            <span class="info-box-text">Inprogress</span>
+            <span class="info-box-number">{{applied}}</span>
+            <div class="progress">
+              <div class="progress-bar" style="width: {{appper}}%"></div>
+            </div>
+            <span class="progress-description"> </span>
+          </div>
+          <!-- /.info-box-content -->
+        </div>
+        <!-- /.info-box -->
+      </div>
+      <!-- /.col -->
+      <div class="col-xl-3 col-md-6 col-12">
+        <div class="info-box bg-b-blue">
+          <span class="info-box-icon push-bottom"
+            ><i class="material-icons">school</i></span
+          >
+          <div class="info-box-content">
+            <span class="info-box-text">Enrolled</span>
+            <span class="info-box-number">{{count}}</span>
+            <div class="progress">
+              <div class="progress-bar" style="width: {{couper}}%"></div>
+            </div>
+            <span class="progress-description">  </span>
+          </div>
+          <!-- /.info-box-content -->
+        </div>
+        <!-- /.info-box -->
+      </div>
+      <!-- /.col -->
+      <div class="col-xl-3 col-md-6 col-12">
+        <div class="info-box bg-b-pink">
+          <span class="info-box-icon push-bottom"
+            ><i class="fa fa-ban"></i
+          ></span>
+          <div class="info-box-content">
+            <span class="info-box-text">Rejected</span>
+            <span class="info-box-number">{{reject}}</span>
+            <div class="progress">
+              <div class="progress-bar" style="width: {{rejper}}%"></div>
+            </div>
+            <span class="progress-description">  </span>
+          </div>
+          <!-- /.info-box-content -->
+        </div>
+        <!-- /.info-box -->
+      </div>
+      <!-- /.col -->
+    </div>
+  </div>
+  <!-- end widget -->
+
+  <!-- start new student list -->
+  <div class="row">
+    <div class="col-md-12 col-sm-12">
+      <div class="card card-box">
+        <div class="card-head">
+          <header>New Student List</header>
+        </div>
+        <div class="card-body">
+          <div class="table-wrap">
+            <div class="table-responsive">
+              <table
+                class="table display product-overview mb-30"
+                id="support_table"
+              >
+                <thead>
+                  <tr>
+                    <th>No</th>
+                    <th>Name</th>
+                    <th>Program</th>
+                    <th>Nationality</th>
+                    <th>Intake</th>
+                    <th>Application Date</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for i in stddetail %}
+                  <tr>
+                  
+                  <td class="left">{{ forloop.counter }}</td>
+                  <td><a href="/student/overview/{{i.stdname}}">{{i.stdname}}</a></td>
+                  <td class="left">{{i.program}}</td>
+                  <td> India </td>
+                  <td>Jan 2020 </td>
+                  <td class="left">{{i.date}}</td>
+                  <td>{{i.status}}</td>
+                  </td>
+                  
+                  </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+              <div class="text-end"><a href="/applicants">More...</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end new student list -->
+
+<!-- end page container -->
+{% endblock %}

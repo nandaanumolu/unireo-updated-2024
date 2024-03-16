@@ -1,0 +1,456 @@
+{% extends 'super_admin/nav.html' %}
+
+{% block content %}
+<div class="page-bar">
+    <div class="page-title-breadcrumb">
+        <div class=" pull-left">
+            <div class="page-title">Student Page</div>
+        </div>
+        <ol class="breadcrumb page-breadcrumb pull-right">
+            <li><i class="fa fa-home"></i>&nbsp;<a class="parent-item" href="/">Home</a>&nbsp;<i
+                    class="fa fa-angle-right"></i>
+            </li>
+            <li class="active">Overview</li>
+        </ol>
+    </div>
+</div>
+<div class="row">
+						<div class="col-md-12">
+							<!-- BEGIN PROFILE SIDEBAR -->
+							<div class="profile-sidebar">
+								<div class="card">
+									<div class="card-body no-padding height-9">
+										<div class="row">
+											<div class="profile-userpic">
+												<img src="https://expatguideturkey.com/wp-content/uploads/2020/10/student-3500990_1920.jpg" class="img-responsive" alt="">
+											</div>
+										</div>
+										{% for i in stdind %}
+										<div class="profile-usertitle">
+											<div class="profile-usertitle-name">{{i.Firstname}} </div>
+                                            <div class="profile-usertitle-job"> {{i.Gender}} | {{i.Dateofbirth}} | {{i.Nationality}}</div>
+										</div>
+										<ul class="list-group list-group-unbordered">
+											<li class="list-group-item">
+												<b>Marital Status</b> <a class="pull-right">{{i.Maritial}}</a>
+											</li>
+											<li class="list-group-item">
+												<b>E-Mail</b> <a class="pull-right">{{i.Email}}</a>
+											</li>
+											<li class="list-group-item">
+												<b>Ph. Number</b> <a class="pull-right">{{i.Phonenumber}}</a>
+											</li>
+                                            <li class="list-group-item">
+												<b>Address</b> <a class="pull-right">{{i.Address}}</a>
+											</li>
+                                            <li class="list-group-item">
+												<b>City</b> <a class="pull-right">{{i.City}}</a>
+											</li>
+                                            <li class="list-group-item">
+												<b>State</b> <a class="pull-right">{{i.State}}</a>
+											</li>
+                                            <li class="list-group-item">
+												<b>Country</b> <a class="pull-right">{{i.Country}}</a>
+											</li>
+										</ul>
+										{% endfor %}
+										<!-- END SIDEBAR USER TITLE -->
+										<!-- SIDEBAR BUTTONS -->
+										
+										<!-- END SIDEBAR BUTTONS -->
+									</div>
+								</div>
+								<div class="card">
+									<div class="card-head">
+										<header>Educational qualification</header>
+									</div>
+									<div class="card-body no-padding height-9">
+										<div class="profile-desc">
+											
+										</div>
+										<ul class="list-group list-group-unbordered">
+											{% for i in stdpro %}
+											{% if i.Testeng == "1" %}
+											<li class="list-group-item">
+												<b>IELTS </b>
+												<div class="profile-desc-item pull-right">{{i.Yeareng}}</div>
+												<div class="profile-desc-item pull-right">{{i.Overallscoreeng}}</div>
+											</li>
+											{% else %}
+											<li class="list-group-item">
+												<b>TOFEL</b>
+												<div class="profile-desc-item pull-right">{{i.Yeareng}}</div>
+												<div class="profile-desc-item pull-right">{{i.Overallscoreeng}}</div>
+											</li>
+											{% endif %}
+											{% endfor %}
+											{% for i in stdpro1 %}
+											{% if i.Testad == "1" %}
+											<li class="list-group-item">
+												<b>GMAT </b>
+												<div class="profile-desc-item pull-right">{{i.Yearad}}</div>
+												<div class="profile-desc-item pull-right">{{i.Overallscoread}}</div>
+											</li>
+											{% else %}
+											<li class="list-group-item">
+												<b>GRE</b>
+												<div class="profile-desc-item pull-right">{{i.Yearad}}</div>
+												<div class="profile-desc-item pull-right">{{i.Overallscoread}}</div>
+											</li>
+											{% endif %}
+											{% endfor %}
+										</ul>
+										
+									</div>
+								</div>
+								{% for i in stdind %}
+								<div class="card">
+									<div class="card-head">
+										<header>Address</header>
+									</div>
+
+									<div class="card-body no-padding height-9">
+										<div class="row text-center m-t-10">
+											<div class="col-md-12">
+												<p>{{i.Address}}
+													<br> {{i.City}}, {{i.Country}}.</p>
+											</div>
+										</div>
+									</div>
+								</div>
+								{% endfor %}
+								{% for i in stdcour %}
+                                <div class="card">
+									<div class="card-head">
+										<header>Intrested Countries</header>
+									</div>
+									<div class="card-body no-padding height-9">
+										<div class="row text-center m-t-10">
+											<div class="col-md-12">
+												<ul>
+                                                    <li>{{i.pcoun1}}</li>
+                                                    <li>{{i.pcoun2}}</li>
+                                                    <li>{{i.pcoun3}}</li>
+                                                
+                                                </ul>
+											</div>
+										</div>
+									</div>
+								</div>
+								
+                                <div class="card">
+									<div class="card-head">
+										<header>Intrested Areas of Study</header>
+									</div>
+									<div class="card-body no-padding height-9">
+										<div class="row text-center m-t-10">
+											<div class="col-md-12">
+												<ul>
+                                                    <li>{{i.pcour4}}</li>
+                                                    <li>{{i.pcour5}}</li>
+                                                    <li>{{i.pcour6}}</li>
+                                                
+                                                </ul>
+											</div>
+										</div>
+									</div>
+								</div>
+								{% endfor %}
+							</div>
+							<!-- END BEGIN PROFILE SIDEBAR -->
+							<!-- BEGIN PROFILE CONTENT -->
+							<div class="profile-content">
+								<div class="row">
+									<div class="card">
+										<div class="card-topline-aqua">
+											<header></header>
+										</div>
+										<div class="white-box">
+											<!-- Nav tabs -->
+											<div class="p-rl-20">
+												
+											</div>
+											<!-- Tab panes -->
+											<div class="tab-content">
+												<div class="tab-pane active fontawesome-demo" id="tab1">
+													{% for i in stdind %}
+													<div id="biography">
+														<div class="row">
+															<div class="col-md-3 col-6 b-r"> <strong>Full Name</strong>
+																<br>
+																<p class="text-muted">{{i.Firstname}} {{i.Lastname}}</p>
+															</div>
+															<div class="col-md-3 col-6 b-r"> <strong>Mobile</strong>
+																<br>
+																<p class="text-muted">{{i.Phonenumber}}</p>
+															</div>
+															<div class="col-md-3 col-6 b-r"> <strong>Email</strong>
+																<br>
+																<p class="text-muted">{{i.Email}}</p>
+															</div>
+															<div class="col-md-3 col-6"> <strong>Location</strong>
+																<br>
+																<p class="text-muted">{{i.Country}}</p>
+															</div>
+														</div>
+														<hr>
+													
+                                                        
+														<h4 class="font-bold">Course Applied</h4>
+													
+														<ul>
+															<li>Data Science</li>
+														</ul>
+                                                        <h4 class="font-bold">Desired Year to Start</h4>
+														
+														<ul>
+															<li>2025</li>
+														</ul>
+														
+													</div>
+													{% endfor %}
+												</div>
+												
+											</div>
+										</div>
+									</div>
+
+
+
+                                    <h2>Academic Details</h2>
+                                    <div class="card">
+										<div class="card-topline-aqua">
+											<header></header>
+										</div>
+										<div class="white-box">
+											
+											
+											<!-- Tab panes -->
+											<div class="tab-content">
+												<div class="tab-pane active fontawesome-demo" id="tab1">
+													{% for i in stdacd %}
+													<div id="biography">
+                                                    <h4 class="font-bold">School Details</h4>
+                                                    <div class="card-body no-padding height-9">
+                                                        <div class="profile-desc">
+                                                            
+                                                        </div>
+                                                        <ul class="list-group list-group-unbordered">
+                                                            <li class="list-group-item">
+                                                                <b>Qualification </b>
+                                                                <div class="profile-desc-item pull-right">{{i.Sscqual}}</div>
+                                                            </li>
+                                                            <li class="list-group-item">
+                                                                <b>Name of School</b>
+                                                                <div class="profile-desc-item pull-right">{{i.Sscname}}</div>
+                                                            </li>
+                                                            <li class="list-group-item">
+                                                                <b>Date of Complition </b>
+                                                                <div class="profile-desc-item pull-right">{{i.Sscdate}}</div>
+                                                            </li>
+                                                            <li class="list-group-item">
+                                                                <b>Marks Obtained</b>
+                                                                <div class="profile-desc-item pull-right">{{i.Sscmarks}}</div>
+                                                            </li>
+                                                            <li class="list-group-item">
+                                                                <b>Grading Scheme</b>
+                                                                <div class="profile-desc-item pull-right">{{i.Sscgrading}}</div>
+                                                            </li>
+                                                            <li class="list-group-item">
+                                                                <b>Uploded File Name</b>
+                                                                <div class="profile-desc-item pull-right">complete certificate</div>
+                                                            </li>
+                                                        </ul>
+                                                        
+                                                    </div>
+                                    
+														
+													
+													
+                                                        
+														
+													</div>
+													{% endfor %}
+												</div>
+												
+											</div>
+										</div>
+									</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                    <div class="card">
+										<div class="card-topline-aqua">
+											<header></header>
+										</div>
+										<div class="white-box">
+											
+											
+											<!-- Tab panes -->
+											<div class="tab-content">
+												<div class="tab-pane active fontawesome-demo" id="tab1">
+													{% for i in stdacd %}
+													<div id="biography">
+                                                    <h4 class="font-bold">High School Details</h4>
+                                                    <div class="card-body no-padding height-9">
+                                                        <div class="profile-desc">
+                                                            
+                                                        </div>
+                                                        <ul class="list-group list-group-unbordered">
+                                                            <li class="list-group-item">
+                                                                <b>Qualification </b>
+                                                                <div class="profile-desc-item pull-right">{{i.Intqual}}</div>
+                                                            </li>
+                                                            <li class="list-group-item">
+                                                                <b>Name of School</b>
+                                                                <div class="profile-desc-item pull-right">{{i.Intname}}</div>
+                                                            </li>
+                                                            <li class="list-group-item">
+                                                                <b>Date of Complition </b>
+                                                                <div class="profile-desc-item pull-right">{{i.Intdate}}</div>
+                                                            </li>
+                                                            <li class="list-group-item">
+                                                                <b>Marks Obtained</b>
+                                                                <div class="profile-desc-item pull-right">{{i.Intmarks}}</div>
+                                                            </li>
+                                                            <li class="list-group-item">
+                                                                <b>Grading Scheme</b>
+                                                                <div class="profile-desc-item pull-right">{{i.Intgrading}}</div>
+                                                            </li>
+                                                            <li class="list-group-item">
+                                                                <b>Uploded File Name</b>
+                                                                <div class="profile-desc-item pull-right">complete certificate</div>
+                                                            </li>
+                                                        </ul>
+                                                        
+                                                    </div>
+                                    
+														
+													
+													
+                                                        
+														
+													</div>
+													{% endfor %}
+												</div>
+												
+											</div>
+										</div>
+									</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                    <div class="card">
+										<div class="card-topline-aqua">
+											<header></header>
+										</div>
+										<div class="white-box">
+											
+											
+											<!-- Tab panes -->
+											<div class="tab-content">
+												<div class="tab-pane active fontawesome-demo" id="tab1">
+													{% for i in stdacd %}
+													<div id="biography">
+                                                    <h4 class="font-bold">University Details</h4>
+                                                    <div class="card-body no-padding height-9">
+                                                        <div class="profile-desc">
+                                                            
+                                                        </div>
+                                                        <ul class="list-group list-group-unbordered">
+                                                            <li class="list-group-item">
+                                                                <b>Qualification </b>
+                                                                <div class="profile-desc-item pull-right">{{i.Uniqual}}</div>
+                                                            </li>
+                                                            <li class="list-group-item">
+                                                                <b>Name of University</b>
+                                                                <div class="profile-desc-item pull-right">{{i.Uniname}}</div>
+                                                            </li>
+                                                            <li class="list-group-item">
+                                                                <b>Course Name</b>
+                                                                <div class="profile-desc-item pull-right">{{i.Unicname}}</div>
+                                                            </li>
+                                                            <li class="list-group-item">
+                                                                <b>Date of Complition </b>
+                                                                <div class="profile-desc-item pull-right">{{i.Unidate}}</div>
+                                                            </li>
+                                                            <li class="list-group-item">
+                                                                <b>Marks Obtained</b>
+                                                                <div class="profile-desc-item pull-right">{{i.Unimarks}}</div>
+                                                            </li>
+                                                            <li class="list-group-item">
+                                                                <b>Grading Scheme</b>
+                                                                <div class="profile-desc-item pull-right">{{i.Unigrading}}</div>
+                                                            </li>
+                                                            <li class="list-group-item">
+                                                                <b>Uploded File Name</b>
+                                                                <div class="profile-desc-item pull-right">certificate</div>
+                                                            </li>
+                                                            
+                                                        </ul>
+                                                        
+                                                    </div>
+                                    
+														
+													
+													
+                                                        
+														
+													</div>
+													{% endfor %}
+												</div>
+												
+											</div>
+										</div>
+									</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+								</div>
+							</div>
+							<!-- END PROFILE CONTENT -->
+						</div>
+					</div>
+{% endblock %}

@@ -1,0 +1,126 @@
+{% extends 'index.html' %}
+{% block content %}
+<div class="page-bar">
+    <div class="page-title-breadcrumb">
+        <div class=" pull-left">
+            <div class="page-title">Course Overview</div>
+        </div>
+        <ol class="breadcrumb page-breadcrumb pull-right">
+            <li><i class="fa fa-home"></i>&nbsp;<a class="parent-item"
+                    href="/unihome">Home</a>&nbsp;<i class="fa fa-angle-right"></i>
+            </li>
+            <li><a class="parent-item" href="">Course</a>&nbsp;<i class="fa fa-angle-right"></i>
+            </li>
+            <li class="active">Course Overview</li>
+        </ol>
+    </div>
+</div>
+<div class="row">
+    {% for i in saved %}
+    <div class="col-md-12">
+        
+        <!-- BEGIN PROFILE SIDEBAR -->
+        <div class="profile-sidebar">
+            <div class="card">
+                <div class="card-body no-padding height-9">
+                    <div class="row">
+                        <div class="course-picture">
+                            <img src="https://s3-ap-southeast-2.amazonaws.com/geg-gug-webapp/images/1557364192-work_while_you_study_banner.jpg" class="img-responsive"
+                                alt=""> </div>
+                    </div>
+                    <div class="profile-usertitle">
+                        
+                        <div class="profile-usertitle-name">{{i.Name}}</div>
+                    
+                    </div>
+                    
+                    <!-- END SIDEBAR USER TITLE -->
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-head">
+                    <header>About Course</header>
+                </div>
+                <div class="card-body no-padding height-9">
+                    <div class="profile-desc">
+                        {{i.About}}
+                    </div>
+                    <ul class="list-group list-group-unbordered">
+                        <li class="list-group-item">
+                            <b>Duration </b>
+                            <div class="profile-desc-item pull-right">{{i.Dur}}</div>
+                        </li>
+                        <li class="list-group-item">
+                            <b>Currency </b>
+                            <div class="profile-desc-item pull-right">{{i.Curr}}</div>
+                        </li>
+                        <li class="list-group-item">
+                            <b>Price </b>
+                            <div class="profile-desc-item pull-right">{{i.Amo}}</div>
+                        </li>
+                        <li class="list-group-item">
+                            <b>No.of Semesters </b>
+                            <div class="profile-desc-item pull-right">{{i.Sem}}</div>
+                        </li>
+                        
+                    </ul>
+                    <div class="row list-separated profile-stat">
+                        <div class="col-md-6 col-sm-4 col-6">
+                            <div class="uppercase profile-stat-title"> {{i.Dur}} </div>
+                            <div class="uppercase profile-stat-text"> Years </div>
+                        </div>
+                        <div class="col-md-6 col-sm-4 col-6">
+                            <div class="uppercase profile-stat-title"> 1045 </div>
+                            <div class="uppercase profile-stat-text"> Students </div>
+                        </div>
+                        
+                    </div>
+                    
+                    
+                </div>
+            </div>
+        </div>
+        <!-- END BEGIN PROFILE SIDEBAR -->
+        <!-- BEGIN PROFILE CONTENT -->
+        <div class="profile-content">
+            <div class="row">
+                <div class="card">
+                    <div class="card-topline-aqua">
+                        <header></header>
+                    </div>
+                    <div class="white-box">
+                        <!-- Nav tabs -->
+                        <!-- Tab panes -->
+                        <div class="tab-content">
+                            <div class="tab-pane active fontawesome-demo">
+                                <div id="biography">
+                                    <h4 class="font-bold">Course Information</h4>
+                                    <p> {{i.Couover}}</p>
+                                    <br>
+                                    <h4 class="font-bold">Course Syllabus</h4>
+                                    <hr>
+                                    <ul>
+                                        <li>{{i.Sem1}}</li>
+                                        
+                                    </ul>
+                                    <br>
+                                    <h4 class="font-bold">Entry Requirments</h4>
+                                    <hr>
+                                    <ul>
+                                        <li>{{i.Req}}</li>
+                                        
+                                        
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- END PROFILE CONTENT -->
+        
+    </div>
+    {% endfor %}
+    </div>
+{% endblock %}

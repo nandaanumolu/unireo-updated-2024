@@ -1,0 +1,188 @@
+{% extends 'student_portal/student_nav.html' %} {% block content %}
+<div class="page-bar">
+    <div class="page-title-breadcrumb">
+        
+        <ol class="breadcrumb page-breadcrumb pull-right">
+            <li><i class="fa fa-home"></i>&nbsp;<a class="parent-item" href="/unihome">Home</a>&nbsp;<i
+                    class="fa fa-angle-right"></i>
+            </li>
+            <li class="active">Support</li>
+        </ol>
+    </div>
+</div>
+<style>
+  *{
+    font-family: 'Roboto', sans-serif;
+  }
+  body {
+    margin: 0px;
+    padding: 0px;
+    background-color: #f2f2f2;
+    font-family: ;
+  }
+  a {
+    text-decoration: none;
+  }
+  .support {
+    width: 100%;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .s-heading {
+    text-align: center;
+  }
+  .s-heading {
+    color: #576975;
+    font-size: 3rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+    margin: 0px;
+  }
+  .s-heading p {
+    color: rgba(87, 105, 117, 0.6);
+    font-size: 1rem;
+    margin: 5px;
+    text-align: centre;
+  }
+
+  .s-box-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .s_box img {
+    height: 75px;
+  }
+  .s-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    width: 300px;
+    height: 400px;
+    padding: 20px 25px;
+    box-sizing: border-box;
+    margin: 30px;
+    position: relative;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+    background-color: #ffffff;
+  }
+
+  .s-box h1 {
+    color: #576975;
+    letter-spacing: 1px;
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+  }
+  .s-box p {
+    color: rgb(87, 105, 117, 0.9);
+    text-align: center;
+  }
+  .s-btn {
+    width: 200px;
+    height: 40px;
+    border-radius: 30px;
+    border: 1px solid rgba(74, 144, 226, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #576975;
+    margin-top: 10px;
+  }
+  .s-box:hover {
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+    transition: all ease 0.3s;
+  }
+  .s-btn:hover {
+    background-color: #4a90e2;
+    border: 1px solid #4a90e2;
+    color: #ffffff;
+    transition: all ease 0.3s;
+  }
+  .bar {
+    width: 100px;
+    height: 6px;
+    position: absolute;
+    left: 50%;
+    top: 0px;
+    transform: translateX(-50%);
+    background-color: #4a90e2;
+    border-radius: 0px 0px 10px 10px;
+    display: none;
+    animation: bar 0.5s;
+  }
+  .s-box:hover .bar {
+    display: block;
+  }
+  #span {
+    color: #2e4ead;
+  }
+  @keyframes bar {
+    0% {
+      width: 0px;
+    }
+    100% {
+      width: 100px;
+    }
+  }
+
+  @media (max-width: 1050px) {
+    .s-box-conatiner {
+      flex-wrap: wrap;
+    }
+    .support {
+      height: auto;
+    }
+    .s-heading {
+      margin: 15px;
+    }
+    .s-box {
+      flex-grow: 1;
+    }
+  }
+</style>
+<body>
+  <section class="support">
+    <div class="s-heading">
+      <h1>Su<span id="span">ppo</span>rt</h1>
+      <p>
+        For Any problem we have a solution
+      </p>
+    </div>
+    <div class="s-box-container">
+      <div class="s-box">
+        <div class="bar"></div>
+        <i class="fa fa-comment fa-5x"></i>
+        <h1>Message Us</h1>
+        <p>Send your query to us and we will get back to you within 4 hours</p>
+        <h3 class="s-btn"><a href="mailto:contact@unirep.com" style="color: inherit;">Send Email</a></h3>
+      </div>
+      <div class="s-box">
+        <div class="bar"></div>
+        <i class="fas fa-map-marked-alt"></i>
+        <h1>Come to us</h1>
+        <p>Suite 12-5, Menara Sentral Vista,
+          150 Jalan Sultan Abdul Samad,
+          Brickfields, 50470, Kuala Lumpur, 
+          Malayisa</p>
+        
+      </div>
+      <div class="s-box">
+        <div class="bar"></div>
+        <i class="fa fa-phone fa-3x" style="size: 20px"></i>
+        <h1>Speak to us</h1>
+        <p>
+          Speak with one of our available executives to get your queries
+          answered immediately
+        </p>
+        <a href="#" class="s-btn"> +603 2276 667 </a>
+      </div>
+    </div>
+  </section>
+</body>
+{% endblock %}

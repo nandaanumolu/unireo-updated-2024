@@ -1,0 +1,83 @@
+{% extends 'agent_portal/nav.html' %}
+{% block content %}
+<div class="page-bar">
+    <div class="page-title-breadcrumb">
+        <div class=" pull-left">
+            <div class="page-title">Agent Page</div>
+        </div>
+        <ol class="breadcrumb page-breadcrumb pull-right">
+            <li><i class="fa fa-home"></i>&nbsp;<a class="parent-item" href="/student/home">Home</a>&nbsp;<i
+                    class="fa fa-angle-right"></i>
+            </li>
+            <li class="active">Overview</li>
+        </ol>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <!-- BEGIN PROFILE SIDEBAR -->
+        <div class="profile-sidebar">     
+            <div class="card">
+                <div class="card-body no-padding height-9">
+                    <div class="row">
+                        <div class="profile-userpic">
+                            <img src="https://t4.ftcdn.net/jpg/02/24/25/99/360_F_224259942_xMiqqtFR3YEePMbEGp7yHdfhRY1420Xq.jpg" class="img-responsive" alt="">
+                        </div>
+                    </div>
+                    <div class="profile-usertitle">
+                        <div class="profile-usertitle-name">Institution Name</div>
+                    </div>
+                    <ul class="list-group list-group-unbordered">
+                        <li class="list-group-item">
+                        <b>Students Joined</b> <a class="pull-right">1,200</a>
+                        </li>
+                        <li class="list-group-item">
+                        <b>Students Consulted</b> <a class="pull-right">750</a>
+                        </li>   
+                    </ul>
+                    <div class="profile-userbuttons">
+                        <button type="button"
+                        class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect m-b-10 btn-circle btn-primary">Edit</button>
+                    </div>
+                </div>
+            </div>
+                
+        
+            </div> 
+            <div class="profile-content">
+                <div class="card">
+                    <div class="card-head">
+                        <header>About Me</header>
+                    </div>
+                    <div class="card-body no-padding height-9">
+                
+                        <ul class="list-group list-group-unbordered">
+                            <li class="list-group-item">
+                            <b>Licenece Number </b>
+                            <div class="profile-desc-item pull-right">012134rf56</div>
+                            </li>
+                            <li class="list-group-item">
+                                <b>Country</b>
+                                <div class="profile-desc-item pull-right">India</div>
+                            </li>
+                            <li class="list-group-item">
+                                <b>State</b>
+                                <div class="profile-desc-item pull-right">Tamilnadu</div>
+                            </li>
+                            <li class="list-group-item">
+                                <b>Email </b>
+                                <div class="profile-desc-item pull-right">test@example.com</div>
+                            </li>
+                            <li class="list-group-item">
+                                <b>Phone</b>
+                                <div class="profile-desc-item pull-right">1234567890</div>
+                            </li>
+                        </ul>
+                
+                    </div>
+                </div> 
+
+            </div>
+    </div>
+
+{% endblock %}

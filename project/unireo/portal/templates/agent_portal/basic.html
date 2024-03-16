@@ -1,0 +1,156 @@
+{% extends 'agent_portal/nav.html' %} 
+
+{% block content %}
+<style>
+  select:focus{
+    border: none;
+    border-bottom: 1px solid gray;
+    
+  }
+  .intl-tel-input{
+    width: 100%;
+  }
+</style>
+<div class="page-bar">
+  <div class="page-title-breadcrumb">
+      <div class=" pull-left">
+          <div class="page-title"> Credentials </div>
+      </div>
+      <ol class="breadcrumb page-breadcrumb pull-right">
+          <li><i class="fa fa-home"></i>&nbsp;<a class="parent-item"
+                  href="index.html">Home</a>&nbsp;<i class="fa fa-angle-right"></i>
+          </li>
+         
+          </li>
+          <li class="active">Basic Details</li>
+      </ol>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-12">
+    <div class="card-box">
+      <div class="card-head">
+        <header class="p-4">Basic Details</header>
+        
+      </div>
+      <form action="/Cdetails" method="post">
+        {% csrf_token %}
+      <div class="card-body row">
+        <div class="card-body row " >
+          
+          
+          <div class="col-lg-6 p-t-20">
+            <div
+              class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width"
+            >
+              <input
+                class="mdl-textfield__input"
+                type="text"
+                id="txtFirstName" name="Cname" value="{{value.Cname}}"
+              />
+              <label class="mdl-textfield__label">Consultancy name</label>
+            </div>
+          </div>
+          <div class="col-lg-6 p-t-20">
+            <div
+              class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width"
+            >
+              <input class="mdl-textfield__input" type="text" id="txtRollNo" name="Aid" value="{{request.session.agentid}}" readonly/>
+              <label class="mdl-textfield__label">Agency ID</label>
+            </div>
+          </div>
+
+          <div class="col-lg-6 p-t-20">
+            <div
+              class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width"
+            >
+              <input
+                class="mdl-textfield__input"
+                type="text"
+                id="txtLasttName" name="Aadd" value="{{value.Aadd}}"
+              />
+              <label class="mdl-textfield__label"> Address</label>
+            </div>
+          </div>
+          <div class="col-lg-6 p-t-20">
+            <div
+              class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width"
+            >
+              <input
+                class="mdl-textfield__input"
+                type="email"
+                id="txtLasttName" name="Email" value="{{request.session.Email2}}" readonly
+              />
+              <label class="mdl-textfield__label">Email</label>
+            </div>
+          </div>
+          
+           <header> Bank details</header>
+           <div class="col-lg-6 p-t-20">
+            <div
+              class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width"
+            >
+              <input
+                class="mdl-textfield__input"
+                type="text"
+                id="txtFirstName" name="Bname" value="{{value.Bname}}"
+              />
+              <label class="mdl-textfield__label">Bank name</label>
+            </div>
+          </div>
+          <div class="col-lg-6 p-t-20">
+            <div
+              class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width"
+            >
+              <input
+                class="mdl-textfield__input"
+                type="text"
+                id="txtFirstName" name="Accountnumber" value="{{value.Accountnumber}}"
+              />
+              <label class="mdl-textfield__label">Account number</label>
+            </div>
+          </div>
+          <div class="col-lg-6 p-t-20">
+            <div
+              class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width"
+            >
+              <input
+                class="mdl-textfield__input"
+                type="text"
+                id="txtFirstName" name="Branch" value="{{value.Branch}}"
+              />
+              <label class="mdl-textfield__label">Branch name</label>
+            </div>
+          </div>
+          <div class="col-lg-6 p-t-20">
+            <div
+              class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width"
+            >
+              <input
+                class="mdl-textfield__input"
+                type="text"
+                id="txtFirstName" name="Ifsccode" value="{{value.Ifsccode}}"
+              />
+              <label class="mdl-textfield__label">IFSC CODE</label>
+            </div>
+          </div>
+
+          <div class="col-lg-12 p-t-20 text-center">
+            <button
+              type="submit" onclick="myguru()"
+              class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect m-b-10 m-r-20 btn-pink"
+            >
+              Submit
+            </button>
+            
+          </div>
+        </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  
+</script>
+{% endblock %}

@@ -1,0 +1,153 @@
+{% extends 'agent_portal/nav.html' %}
+{% block content %}
+<div class="page-bar">
+    <div class="page-title-breadcrumb">
+      <div class="pull-left">
+        <div class="page-title" style="letter-spacing: 3px">Dashboard</div>
+      </div>
+      <ol class="breadcrumb page-breadcrumb pull-right">
+        <li>
+          <i class="fa fa-home"></i>&nbsp;<a class="parent-item" href="/"
+            >Home</a
+          >&nbsp;<i class="fa fa-angle-right"></i>
+        </li>
+        <li class="active">Dashboard</li>
+      </ol>
+    </div>
+  </div>
+  <!-- start widget -->
+  <div class="state-overview">
+    <div class="row">
+      <div class="col-xl-3 col-md-6 col-12">
+        <div class="info-box bg-b-green">
+          <span class="info-box-icon push-bottom"
+            ><i class="material-icons">group</i></span
+          >
+          <div class="info-box-content">
+            <span class="info-box-text">Count</span>
+            <span class="info-box-number">{{count}}</span>
+            <div class="progress">
+              <div class="progress-bar" style="{{couper}}"></div>
+            </div>
+            <span class="progress-description">  </span>
+          </div>
+          <!-- /.info-box-content -->
+        </div>
+        <!-- /.info-box -->
+      </div>
+      <!-- /.col -->
+      <div class="col-xl-3 col-md-6 col-12">
+        <div class="info-box bg-b-yellow">
+          <span class="info-box-icon push-bottom"
+            ><i class="material-icons">person</i></span
+          >
+          <div class="info-box-content">
+            <span class="info-box-text">Inprogress</span>
+            <span class="info-box-number">{{applied}}</span>
+            <div class="progress">
+              <div class="progress-bar" style="{{apper}}"></div>
+            </div>
+            <span class="progress-description">  </span>
+          </div>
+          <!-- /.info-box-content -->
+        </div>
+        <!-- /.info-box -->
+      </div>
+      <!-- /.col -->
+      <div class="col-xl-3 col-md-6 col-12">
+        <div class="info-box bg-b-blue">
+          <span class="info-box-icon push-bottom"
+            ><i class="material-icons">school</i></span
+          >
+          <div class="info-box-content">
+            <span class="info-box-text">Enrolled</span>
+            <span class="info-box-number">{{accept}}</span>
+            <div class="progress">
+              <div class="progress-bar" style="width: 85%"></div>
+            </div>
+            <span class="progress-description"> {{acccper}}</span>
+          </div>
+          <!-- /.info-box-content -->
+        </div>
+        <!-- /.info-box -->
+      </div>
+      <!-- /.col -->
+      <div class="col-xl-3 col-md-6 col-12">
+        <div class="info-box bg-b-pink">
+          <span class="info-box-icon push-bottom"
+            ><i class="fa fa-ban"></i
+          ></span>
+          <div class="info-box-content">
+            <span class="info-box-text">Rejected</span>
+            <span class="info-box-number">{{reject}}</span>
+            <div class="progress">
+              <div class="progress-bar" style="{{rejper}}"></div>
+            </div>
+            <span class="progress-description"> </span>
+          </div>
+          <!-- /.info-box-content -->
+        </div>
+        <!-- /.info-box -->
+      </div>
+      <!-- /.col -->
+    </div>
+  </div>
+  <!-- end widget -->
+
+  <!-- start new student list -->
+  <div class="row">
+    <div class="col-md-12 col-sm-12">
+      <div class="card card-box">
+        <div class="card-head">
+          <header>New Application List</header>
+        </div>
+        <div class="card-body">
+          <div class="table-wrap">
+            <div class="table-responsive">
+              <table
+                class="table display product-overview mb-30"
+                id="support_table"
+              >
+              <thead>
+                <tr>
+                    <th></th>
+                    <th> No </th>
+                    <th>Std Name </th>
+                    <th>Uni Name </th>
+                    <th> Program</th>
+                    <th>Application Date</th>
+                    <th> Status </th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for appli in stddetail %}
+                <tr class="odd gradeX">
+                    <td class="patient-img">
+                        <img src="https://image.shutterstock.com/image-photo/portrait-happy-fashionable-handsome-man-260nw-600200732.jpg"
+                            alt="">
+                    </td>
+                    <td class="left">{{forloop.counter}}</td>
+                    <td>{{appli.stdname}}</td>
+                    <td class="left">{{appli.univname}}</td>
+                    <td> {{appli.program}} </td>
+                    <td class="left">{{appli.date}}</td>
+                    <td>{{appli.status}}</td>
+                </tr>
+                {% endfor %}
+                
+                
+                
+
+
+            </tbody>
+              </table>
+              <div class="text-end"><a href="/applicants">More...</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

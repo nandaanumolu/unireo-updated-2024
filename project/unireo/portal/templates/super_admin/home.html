@@ -1,0 +1,164 @@
+{% extends 'super_admin/nav.html' %}
+{% block content %}
+
+<div>
+    <div class="page-bar">
+        <div class="page-title-breadcrumb">
+            <div class="pull-left">
+                <div class="page-title" style="letter-spacing: 3px">Dashboard</div>
+            </div>
+            <ol class="breadcrumb page-breadcrumb pull-right">
+                <li>
+                    <i class="fa fa-home"></i>&nbsp;<a class="parent-item" href="/unihome">Home</a>&nbsp;<i
+                        class="fa fa-angle-right"></i>
+                </li>
+                <li class="active">Dashboard</li>
+            </ol>
+        </div>
+    </div>
+    <!-- start widget -->
+    <div class="state-overview">
+        <div class="row">
+            <div class="col-xl-6 col-md-6 col-12">
+                <div class="info-box bg-b-green">
+                    <span class="info-box-icon push-bottom"><i class="material-icons">group</i></span>
+                    <div class="info-box-content">
+                        <span class="info-box-text">Students In Unireo</span>
+                        <span class="info-box-number">{{students}}</span>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: {{accper}}%"></div>
+                        </div>
+                        <span class="progress-description"> </span>
+                    </div>
+                    <!-- /.info-box-content -->
+                </div>
+                <!-- /.info-box -->
+            </div>
+            <!-- /.col -->
+            <div class="col-xl-6 col-md-6 col-12">
+                <div class="info-box bg-b-yellow">
+                    <span class="info-box-icon push-bottom"><i class="material-icons">person</i></span>
+                    <div class="info-box-content">
+                        <span class="info-box-text">Universities In Unireo</span>
+                        <span class="info-box-number">{{universities}}</span>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: {{appper}}%"></div>
+                        </div>
+                        <span class="progress-description"> </span>
+                    </div>
+                    <!-- /.info-box-content -->
+                </div>
+                <!-- /.info-box -->
+            </div>
+            <!-- /.col -->
+            <div class="col-xl-6 col-md-6 col-12">
+                <div class="info-box bg-b-blue">
+                    <span class="info-box-icon push-bottom"><i class="material-icons">school</i></span>
+                    <div class="info-box-content">
+                        <span class="info-box-text">Agents In Unireo</span>
+                        <span class="info-box-number">{{agents}}</span>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: {{couper}}%"></div>
+                        </div>
+                        <span class="progress-description"> </span>
+                    </div>
+                    <!-- /.info-box-content -->
+                </div>
+                <!-- /.info-box -->
+            </div>
+            <!-- /.col -->
+            <div class="col-xl-6 col-md-6 col-12">
+                <div class="info-box bg-b-pink">
+                    <span class="info-box-icon push-bottom"><i class="fa fa-ban"></i></span>
+                    <div class="info-box-content">
+                        <span class="info-box-text">Total Applications</span>
+                        <span class="info-box-number">{{totappli}}</span>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: {{rejper}}%"></div>
+                        </div>
+                        <span class="progress-description"> </span>
+                    </div>
+                    <!-- /.info-box-content -->
+                </div>
+                <!-- /.info-box -->
+            </div>
+            <!-- /.col -->
+            <div class="col-xl-6 col-md-6 col-12">
+                <div class="info-box bg-b-green">
+                    <span class="info-box-icon push-bottom"><i class="material-icons">group</i></span>
+                    <div class="info-box-content">
+                        <span class="info-box-text">Student Applications</span>
+                        <span class="info-box-number">{{stdappli}}</span>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: {{accper}}%"></div>
+                        </div>
+                        <span class="progress-description"> </span>
+                    </div>
+                    <!-- /.info-box-content -->
+                </div>
+                <!-- /.info-box -->
+            </div>
+            <div class="col-xl-6 col-md-6 col-12">
+                <div class="info-box bg-b-blue">
+                    <span class="info-box-icon push-bottom"><i class="material-icons">group</i></span>
+                    <div class="info-box-content">
+                        <span class="info-box-text">Agent Applications</span>
+                        <span class="info-box-number">{{agentappli}}</span>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: {{accper}}%"></div>
+                        </div>
+                        <span class="progress-description"> </span>
+                    </div>
+                    <!-- /.info-box-content -->
+                </div>
+                <!-- /.info-box -->
+            </div>
+            <div class="col-xl-6 col-md-6 col-12">
+                <div class="info-box bg-b-blue">
+                    <span class="info-box-icon push-bottom"><i class="material-icons">group</i></span>
+                    <div class="info-box-content">
+                        <span class="info-box-text">Accepted Applications</span>
+                        <span class="info-box-number">{{accepted}}</span>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: {{accper}}%"></div>
+                        </div>
+                        <span class="progress-description"> </span>
+                    </div>
+                    <!-- /.info-box-content -->
+                </div>
+                <!-- /.info-box -->
+            </div>
+            <div class="col-xl-6 col-md-6 col-12">
+                <div class="info-box bg-b-blue">
+                    <span class="info-box-icon push-bottom"><i class="material-icons">group</i></span>
+                    <div class="info-box-content">
+                        <span class="info-box-text">Rejected Applications</span>
+                        <span class="info-box-number">{{rejected}}</span>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: {{accper}}%"></div>
+                        </div>
+                        <span class="progress-description"> </span>
+                    </div>
+                    <!-- /.info-box-content -->
+                </div>
+                <!-- /.info-box -->
+            </div>
+        </div>
+    </div>
+    <!-- end widget -->
+
+
+</div>
+
+
+
+{% endblock %}
+<!--
+//home:-admin/home
+//agent:-admin/agent
+//student:-agent/students
+//university:-agent/universities
+//courses:-admin/courses
+//settings:-admin/settings 
+*/
+-->

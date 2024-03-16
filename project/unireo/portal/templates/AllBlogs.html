@@ -1,0 +1,40 @@
+{% extends 'index.html' %}
+{% block content %}
+<div class="page-bar">
+    <div class="page-title-breadcrumb">
+        <div class=" pull-left">
+            <div class="page-title">Blogs</div>
+        </div>
+        <ol class="breadcrumb page-breadcrumb pull-right">
+            <li><i class="fa fa-home"></i>&nbsp;<a class="parent-item"
+                    href="/unihome">Home</a>&nbsp;<i class="fa fa-angle-right"></i>
+            </li>
+           
+            </li>
+            <li class="active">All Blogs</li>
+        </ol>
+    </div>
+</div>
+<div class="row">
+    {% for record in listblo %}
+    <div class="col">
+        <div class="card " style="width: 25rem;">
+            <div class="card-header">
+               <span>{{B.date}}</span>
+               <span class="pull-right">
+                  <a href="allblogs/{{record.Bname}}/edit"> <i class="fa fa-pencil p-2" style="color: blue;"></i></a>
+                    <a href="allblogs/{{record.Bname}}/delete" data-toggle="tooltip" title="Delete"><i class="fa fa-trash" style="color: red;"></i></a>
+                </span>
+              </div>
+            <img src="https://blogmedia.evbstatic.com/wp-content/uploads/wpmulti/sites/16/2017/08/25172702/Screen-Shot-2017-08-25-at-5.20.31-pm.png" class="card-img-top" alt="...">
+            <div class="card-body">
+               <h3 class="card-title text-center">{{record.Bname}}</h3>
+            </div>
+          </div>
+    </div>
+    {% endfor %}
+    
+   
+</div>
+
+{% endblock %}

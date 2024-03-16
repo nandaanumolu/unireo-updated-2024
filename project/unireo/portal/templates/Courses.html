@@ -1,0 +1,253 @@
+{% extends 'index.html' %}
+{% block content %}
+<div class="page-bar">
+    <div class="page-title-breadcrumb">
+        <div class=" pull-left">
+            <div class="page-title">Add Course</div>
+        </div>
+        <ol class="breadcrumb page-breadcrumb pull-right">
+            <li><i class="fa fa-home"></i>&nbsp;<a class="parent-item" href="/unihome">Home</a>&nbsp;<i
+                    class="fa fa-angle-right"></i>
+            </li>
+            <li><a class="parent-item" href="">Course</a>&nbsp;<i class="fa fa-angle-right"></i>
+            </li>
+            <li class="active">Add Course</li>
+        </ol>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <div class="card-box">
+            <div class="card-head">
+                <header>Course Code </header>
+                <button id="panel-button" class="mdl-button mdl-js-button mdl-button--icon pull-right"
+                    data-upgraded=",MaterialButton">
+                    <i class="material-icons">more_vert</i>
+                </button>
+                <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
+                    data-mdl-for="panel-button">
+                    <li class="mdl-menu__item"><i class="material-icons">assistant_photo</i>Action
+                    </li>
+                    <li class="mdl-menu__item"><i class="material-icons">print</i>Another action
+                    </li>
+                    <li class="mdl-menu__item"><i class="material-icons">favorite</i>Something else
+                        here</li>
+                </ul>
+            </div>
+            <form action="/addcourses" method="post">
+                {% csrf_token %}
+            <div class="card-body row">
+                
+                <div class="col-lg-6 p-t-20">
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+                        <input class="mdl-textfield__input" type="text" id="txtFirstName" name="Name" value="{{value.Name}}" >
+                        <label class="mdl-textfield__label"><span>Course Name</span></label>
+                    </div>
+                </div>
+                <div class="col-lg-6 p-t-20">
+                    <div
+                        class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select getmdl-select__fix-height txt-full-width">
+                        <input class="mdl-textfield__input" type="text" id="course"  tabIndex="-1" name="Type" value="{{value.Type}}">
+                        <label for="course" class="pull-right margin-0">
+                            <i class="mdl-icon-toggle__label material-icons">keyboard_arrow_down</i>
+                        </label>
+                        <label for="course" class="mdl-textfield__label">Course Type</label>
+                        <ul data-mdl-for="course" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
+                            <li class="mdl-menu__item" data-val="DE">UG</li>
+                            <li class="mdl-menu__item" data-val="BY">PG</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-6 p-t-20">
+                    <div
+                        class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select getmdl-select__fix-height txt-full-width">
+                        <input class="mdl-textfield__input" type="text" id="dept"  tabIndex="-1" name="Depname" value="{{value.Depname}}">
+                        <label for="dept" class="pull-right margin-0">
+                            <i class="mdl-icon-toggle__label material-icons">keyboard_arrow_down</i>
+                        </label>
+                        <label for="dept" class="mdl-textfield__label">Department Name</label>
+                        <ul data-mdl-for="dept" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
+                            <li class="mdl-menu__item" data-val="DE">Undergraduate Center</li>
+                            <li class="mdl-menu__item" data-val="BY">Postgraduate Center</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-6 p-t-20">
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+                        <input class="mdl-textfield__input" type="text" id="date" name="Courseapp" value="{{value.Courseapp}}">
+                        <label class="mdl-textfield__label">Course Approval Date</label>
+                    </div>
+                </div>
+                <div class="col-lg-6 p-t-20">
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+                        <input class="mdl-textfield__input" type="text" id="txtPwd" name="Appauth" value="{{value.Appauth}}">
+                        <label class="mdl-textfield__label">Approval Authority</label>
+                    </div>
+                </div>
+                <h4>Tution Fee</h4>
+                <div class="col-lg-6 p-t-20">
+                    <div
+                        class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select getmdl-select__fix-height txt-full-width">
+                        <input class="mdl-textfield__input" type="text" id="currency" name="Curr" readonly tabIndex="-1" value="{{value.Curr}}">
+                        <label for="currency" class="pull-right margin-0">
+                            <i class="mdl-icon-toggle__label material-icons">keyboard_arrow_down</i>
+                        </label>
+                        <label for="currency" class="mdl-textfield__label">Currency</label>
+                        <ul data-mdl-for="currency" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
+                            <li class="mdl-menu__item" data-val="DE">INR</li>
+                            <li class="mdl-menu__item" data-val="BY">Dollar</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-6 p-t-20">
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+                        <input class="mdl-textfield__input" type="text" name="Amo" id="designation" value="{{value.Amo}}">
+                        <label class="mdl-textfield__label">Amount</label>
+                    </div>
+                </div>
+                <div class="col-lg-6 p-t-20">
+                    <div
+                        class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select getmdl-select__fix-height txt-full-width">
+                        <input class="mdl-textfield__input" type="text" id="duration" tabIndex="-1" name="Dur" value="{{value.Dur}}"> 
+                        <label for="duration" class="pull-right margin-0">
+                            <i class="mdl-icon-toggle__label material-icons">keyboard_arrow_down</i>
+                        </label>
+                        <label for="list2" class="mdl-textfield__label">Course Duration</label>
+                        <ul data-mdl-for="duration" class="mdl-menu mdl-menu--bottom-left mdl-js-menu"  >
+                            <li class="mdl-menu__item" data-val="DE">0.5 years</li>
+                            <li class="mdl-menu__item" data-val="DE">1 years</li>
+                            <li class="mdl-menu__item" data-val="BY">1.5 years</li>
+                            <li class="mdl-menu__item" data-val="BY">2 years</li>
+                            <li class="mdl-menu__item" data-val="BY">2.5 years</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-6 p-t-20">
+                    <div
+                        class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select getmdl-select__fix-height txt-full-width">
+                        <input class="mdl-textfield__input" type="text" id="sample2" name="Sem" readonly tabIndex="-1" value="{{value.Sem}}">
+                        <label for="sample2" class="pull-right margin-0">
+                            <i class="mdl-icon-toggle__label material-icons">keyboard_arrow_down</i>
+                        </label>
+                        <label for="sample2" class="mdl-textfield__label">No of Semesters</label>
+                        <ul data-mdl-for="sample2" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
+                            <li class="mdl-menu__item" data-val="DE">1</li>
+                            <li class="mdl-menu__item" data-val="DE">2</li>
+                            <li class="mdl-menu__item" data-val="BY">3</li>
+                            <li class="mdl-menu__item" data-val="BY">4</li>
+                            <li class="mdl-menu__item" data-val="BY">5</li>
+                            <li class="mdl-menu__item" data-val="BY">6</li>
+                            <li class="mdl-menu__item" data-val="BY">7</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-12 p-t-20">
+                    <div class="mdl-textfield mdl-js-textfield txt-full-width">
+                        <input class="mdl-textfield__input" rows="4" id="text7" type="text"  name="Couover" value="{{value.Couover}}">
+                        <label class="mdl-textfield__label" for="text7">Course Overview</label>
+                    </div>
+                </div>
+                <h4>Course Content</h4>
+                {% if value.Sem1 %}
+                {% for i in value.Sem1 %}
+                <div class="col-lg-6 p-t-20">   
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+                        <label class="pull-right margin-0" >
+                            <i class="mdl-icon-toggle__label material-icons addsem1">add_box</i>
+                        </label>
+                        <input class="mdl-textfield__input" type="text" id="designation" name="Sem1[]" value={{i}} value="{{value.Sem1}}">
+                        <label class="mdl-textfield__label">Semester 1</label>
+                    </div>
+                </div>
+                {% endfor %}
+                {% else %}
+                <div class="col-lg-6 p-t-20">   
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+                        <label class="pull-right margin-0" >
+                            <i class="mdl-icon-toggle__label material-icons addsem1">add_box</i>
+                        </label>
+                        <input class="mdl-textfield__input" type="text" id="designation" name="Sem1[]">
+                        <label class="mdl-textfield__label">Semester 1</label>
+                    </div>
+                </div>
+                {% endif %}
+                {% if value.Sem2 %}
+                {% for i in value.Sem2 %}
+                <div class="col-lg-6 p-t-20" >
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+                        <label class="pull-right margin-0">
+                            <i class="mdl-icon-toggle__label material-icons addsem2" >add_box</i>
+                        </label>
+                        <input class="mdl-textfield__input" type="text" id="designation" name="Sem2[]" value={{i}}>
+                        <label class="mdl-textfield__label">Semester 2</label>
+
+                    </div>
+                </div>
+                {% endfor %}
+                {% else %}
+                <div class="col-lg-6 p-t-20" >
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+                        <label class="pull-right margin-0">
+                            <i class="mdl-icon-toggle__label material-icons addsem2" >add_box</i>
+                        </label>
+                        <input class="mdl-textfield__input" type="text" id="designation" name="Sem2[]">
+                        <label class="mdl-textfield__label">Semester 2</label>
+
+                    </div>
+                </div>
+                {% endif %} 
+                <div class="col-lg-6" id="newsem"></div>
+                <div class="col-lg-6"id="sem2"></div>
+
+
+
+                <h4>Entry Requirments</h4>
+                {% if value.Cri %}
+                {% for i in value.Cri %}
+                <div class="col-lg-12 p-t-20">
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+                        <label class="pull-right margin-0">
+                            <i class="mdl-icon-toggle__label material-icons" id="add">add_box</i>
+                        </label>
+                        <input class="mdl-textfield__input" type="text" id="designation" name="Cri[]" value="{{i}}">
+                        <label class="mdl-textfield__label">Criteria's</label>
+
+                    </div>
+                   
+                </div>
+                {% endfor %}
+                {% else %}
+                <div class="col-lg-12 p-t-20">
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+                        <label class="pull-right margin-0">
+                            <i class="mdl-icon-toggle__label material-icons" id="add">add_box</i>
+                        </label>
+                        <input class="mdl-textfield__input" type="text" id="designation" name="Cri[]">
+                        <label class="mdl-textfield__label">Criteria's</label>
+
+                    </div>
+                   
+                </div>
+                {% endif %}
+                <div class="col-lg-12 " id="new1"></div>
+
+
+
+
+                <div class="col-lg-12 p-t-20 text-center">
+                   
+                    <button type="Submit" onclick="myguru()"
+                        class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect m-b-10 m-r-20 btn-pink">Submit</button>
+                    <button type="button"
+                        class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect m-b-10 btn-default">Cancel</button>
+                  
+                    </div>
+                </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

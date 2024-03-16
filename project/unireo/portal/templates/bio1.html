@@ -1,0 +1,71 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+	  <style>
+		  *{
+			font-family: 'Open Sans', sans-serif;
+		  }
+		  div{
+  background-color: white;
+  border-radius: 20px;
+  font-weight:bold;
+  margin:100px auto;
+  width:30%;
+  }
+  form{
+	  margin-left: 110px;
+  }
+input, select, label {
+   display:block;
+   margin-bottom:5px;
+}
+button{
+  font-weight:bold;
+  text-align:center;
+  }
+  h1{
+    margin-left: 18px;
+    font-weight:bold;
+  }
+
+button {
+  border:none;
+  border-radius:5px;
+  display:block;
+  margin:auto;
+  padding:10px;
+}
+h1{
+  margin-left: 10px;
+}
+body{
+  background-image:linear-gradient(#cc2b5e,#753a88);
+  }
+	  </style>
+  </head>
+  <body>
+    <div class="col-lg-4 col-md-6 col-sm-4">
+      <br>
+        
+      <form action="/student/application" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+         <h1> Offer Letter </h1>
+        <label>Name
+        </label>
+        <input type='text' name="Name" value="{{name}}" readonly>
+        
+        <label>OfferLetter
+        </label>
+        <input type='file' name="Letter" >
+        
+     
+      <br>
+      <button type='submit'>Submit
+      </button>
+      <br>
+    </form>
+    </div>
+  </body>
+</html>

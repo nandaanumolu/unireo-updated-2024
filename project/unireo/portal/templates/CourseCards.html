@@ -1,0 +1,80 @@
+{% extends 'index.html' %}
+{% block content %}
+<div class="page-bar">
+    <div class="page-title-breadcrumb">
+        <div class=" pull-left">
+            <div class="page-title">Courses</div>
+        </div>
+        <ol class="breadcrumb page-breadcrumb pull-right">
+            <li><i class="fa fa-home"></i>&nbsp;<a class="parent-item"
+                    href="/unihome">Home</a>&nbsp;<i class="fa fa-angle-right"></i>
+            </li>
+            <li><a class="parent-item" href="/courseCards">Courses</a>&nbsp;<i class="fa fa-angle-right"></i>
+            </li>
+            <li><a class="parent-item" href="/courseCards">All Courses</a></i>
+            </li>
+           
+        </ol>
+    </div>
+</div>
+
+<div class="row">
+    {% for i in saved %}
+    <div class="col-lg-4">
+        
+        <div class="card">
+            <div class="card-header">
+                <span> {{i.Name}}</span>
+                <span class="pull-right">
+                   <a href="savedcourses/{{i.Name}}/edit"> <i class="fa fa-pencil p-2" style="color: blue;"></i></a>
+                     <a href="savedcourses/{{i.Name}}/delete" data-toggle="tooltip" title="Delete"><i class="fa fa-trash" style="color: red;"></i></a>
+                 </span>
+               </div>
+            
+            <div class="card-body no-padding height-9">
+                <div class="row">
+                    <div class="profile-userpic">
+                        <img src="https://s3-ap-southeast-2.amazonaws.com/geg-gug-webapp/images/1557364192-work_while_you_study_banner.jpg" class="img-responsive img-circle" alt="" style="margin: 0px auto;
+                        width: 100px;
+                        border-radius: 50% 50% 50% 50%;
+                        height: 100px;"> </div>
+                </div>
+               
+                <div class="profile-usertitle">
+                    <div class="profile-usertitle-name" > {{i.Name}} </div>
+                   
+                </div>
+                <ul class="list-group list-group-unbordered">
+                    <li class="list-group-item">
+                        <b>Duration</b> <a class="pull-right">{{i.Dur}}</a>
+                    </li>
+                    <li class="list-group-item">
+                        <b>Currency</b> <a class="pull-right">{{i.Curr}}</a>
+                    </li>
+                    <li class="list-group-item">
+                        <b>Fee</b> <a class="pull-right">{{i.Amo}}</a>
+                    </li>
+                    <li class="list-group-item">
+                        <b>Semesters</b> <a class="pull-right">{{i.Sem}}</a>
+                    </li>
+                </ul>
+               
+
+                <div class="mt-3">
+                    <a href="/coursesoverview/{{i.Name}}" class="pull-right">More ...</a>
+                </div>
+                
+            </div>
+           
+        </div>
+       
+    </div>
+    
+    
+    
+    
+
+  {% endfor %}
+</div>
+
+{% endblock %}

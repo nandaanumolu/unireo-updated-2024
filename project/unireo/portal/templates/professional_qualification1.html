@@ -1,0 +1,188 @@
+{% extends 'student_portal/student_nav.html' %} {% block content %}
+<div class="page-bar">
+  <div class="page-title-breadcrumb">
+      <div class=" pull-left">
+          <div class="page-title">Professional Qualification</div>
+      </div>
+      <ol class="breadcrumb page-breadcrumb pull-right">
+          <li><i class="fa fa-home"></i>&nbsp;<a class="parent-item"
+                  href="/unihome">Home</a>&nbsp;<i class="fa fa-angle-right"></i>
+          </li>
+         
+          </li>
+          <li class="active">Professional Qualification</li>
+      </ol>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-12">
+    <div class="card-box">
+      <div class="card-head">
+        <header class="p-4">Professional Qualification</header>
+        
+      </div>
+      <div class="card-body row">
+        <div class="card-body row">
+          <div>
+            <h2>English Proficiency</h2>
+            <label class="pull-right margin-0">
+              <i class="mdl-icon-toggle__label material-icons addenglish"
+                >add_box</i
+              >
+            </label>
+          </div>
+
+          <div class="col-lg-6 p-t-20">
+            <label
+              class="mdl-radio mdl-js-radio mdl-js-ripple-effect"
+              for="option-10"
+            >
+              <input
+                type="radio"
+                id="option-10"
+                class="mdl-radio__button"
+                name="options"
+                value="2"
+              />
+              <span class="mdl-radio__label">Ielts</span> </label
+            >&nbsp&nbsp &nbsp
+            <label
+              class="mdl-radio mdl-js-radio mdl-js-ripple-effect"
+              for="option-2"
+            >
+              <input
+                type="radio"
+                id="option-2"
+                class="mdl-radio__button"
+                name="options"
+                value="2"
+              />
+              <span class="mdl-radio__label">Tofel</span>
+            </label>
+          </div>
+          <div class="col-lg-6 p-t-20">
+            <div
+              class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width"
+            >
+              <input class="mdl-textfield__input" type="text" id="date" />
+              <label class="mdl-textfield__label">Year taken</label>
+            </div>
+          </div>
+          <div class="col-lg-6 p-t-20">
+            <div
+              class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width"
+            >
+              <input class="mdl-textfield__input" type="text" id="txtRollNo" />
+              <label class="mdl-textfield__label">Overall Score</label>
+            </div>
+          </div>
+          <div class="col-lg-6 p-t-20">
+            <div
+              class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width"
+            >
+              <input
+                class="mdl-textfield__input"
+                type="file"
+                id="txtLasttName"
+              />
+              <label class="mdl-textfield__label"></label>
+            </div>
+          </div>
+          <div class="row" id="addenglish"></div>
+
+          <div>
+            <h2>Admission test</h2>
+            <label class="pull-right margin-0">
+              <i class="mdl-icon-toggle__label material-icons addgre"
+                >add_box</i
+              >
+            </label>
+          </div>
+          <div class="col-lg-6 p-t-20">
+            <label
+              class="mdl-radio mdl-js-radio mdl-js-ripple-effect"
+              for="option-10"
+            >
+              <input
+                type="radio"
+                id="option-10"
+                class="mdl-radio__button"
+                name="options"
+                value="2"
+              />
+              <span class="mdl-radio__label">GMAT</span> </label
+            >&nbsp&nbsp &nbsp
+            <label
+              class="mdl-radio mdl-js-radio mdl-js-ripple-effect"
+              for="option-2"
+            >
+              <input
+                type="radio"
+                id="option-2"
+                class="mdl-radio__button"
+                name="options"
+                value="2"
+              />
+              <span class="mdl-radio__label">GRE</span>
+            </label>
+          </div>
+          <div class="col-lg-6 p-t-20">
+            <div
+              class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width"
+            >
+              <input class="mdl-textfield__input" type="text" id="date" />
+              <label class="mdl-textfield__label">Year Taken</label>
+            </div>
+          </div>
+          <div class="col-lg-6 p-t-20">
+            <div
+              class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width"
+            >
+              <input class="mdl-textfield__input" type="text" id="txtRollNo" />
+              <label class="mdl-textfield__label">Overall Score</label>
+            </div>
+          </div>
+          <div class="col-lg-6 p-t-20">
+            <div
+              class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width"
+            >
+              <input
+                class="mdl-textfield__input"
+                type="file"
+                id="txtLasttName"
+              />
+              <label class="mdl-textfield__label"></label>
+            </div>
+          </div>
+          <div class="row" id="addgre"></div>
+
+          <div class="col-lg-12 p-t-20 text-center">
+          <a href="/student/academic">
+          <button
+              type="button"
+              class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect m-b-10 btn-default"
+            >
+              Previous
+            </button>
+            </a>
+            <button
+              type="button"
+              class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect m-b-10 m-r-20 btn-pink"
+            >
+              Submit
+            </button>
+            <a href="/student/preference">
+            <button
+              type="button"
+              class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect m-b-10 btn-default"
+            >
+              Next
+            </button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

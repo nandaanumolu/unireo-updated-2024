@@ -1,0 +1,308 @@
+{% extends 'index.html' %} {% block content %}
+<div class="page-bar">
+  <div class="page-title-breadcrumb">
+    <div class="pull-left">
+      <div class="page-title">Application Form</div>
+    </div>
+    <ol class="breadcrumb page-breadcrumb pull-right">
+      <li>
+        <i class="fa fa-home"></i>&nbsp;<a class="parent-item" href="/unihome"
+          >Home</a
+        >&nbsp;<i class="fa fa-angle-right"></i>
+      </li>
+      
+      <li class="active">Application Form</li>
+    </ol>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-12">
+    <div class="card-box">
+      <div class="card-head">
+        <header>Application</header>
+        <button
+          id="panel-button"
+          class="mdl-button mdl-js-button mdl-button--icon pull-right"
+          data-upgraded=",MaterialButton"
+        >
+          <i class="material-icons">more_vert</i>
+        </button>
+        <ul
+          class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
+          data-mdl-for="panel-button"
+        >
+          <li class="mdl-menu__item">
+            <i class="material-icons">assistant_photo</i>Action
+          </li>
+          <li class="mdl-menu__item">
+            <i class="material-icons">print</i>Another action
+          </li>
+          <li class="mdl-menu__item">
+            <i class="material-icons">favorite</i>Something else here
+          </li>
+        </ul>
+      </div>
+      <div class="card-body row">
+        <form method=post  action="/applicationform" enctype="multipart/form-data">
+          {% csrf_token %}
+        <div class="card-body row">
+          <div class="col-lg-6 p-t-20">
+            <div
+              class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width"
+            >
+              <input
+                class="mdl-textfield__input"
+                type="text"
+                id="txtFirstName" name="Applyfee"
+                value="{{value.Applyfee}}"
+              />
+              <label class="mdl-textfield__label">Application Fee</label>
+            </div>
+          </div>
+          <div class="col-lg-6 p-t-20">
+            <div
+              class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width"
+            >
+              <input
+                class="mdl-textfield__input"
+                type="number"
+                id="txtRollNo" name="Duration"
+                value="{{value.Duration}}"
+              />
+              <label class="mdl-textfield__label">Duration</label>
+            </div>
+          </div>
+          <div class="col-lg-6 p-t-20">
+            <div
+              class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select getmdl-select__fix-height txt-full-width"
+            >
+              <input
+                class="mdl-textfield__input"
+                type="text"
+                id="list2"
+                value="{{value.Currency}}"
+                readonly
+                tabindex="-1" name="Currency"
+              />
+              <label for="list2" class="pull-right margin-0">
+                <i class="mdl-icon-toggle__label material-icons"
+                  >keyboard_arrow_down</i
+                >
+              </label>
+              <label for="list2" class="mdl-textfield__label">Currency</label>
+              <ul
+                data-mdl-for="list2"
+                class="mdl-menu mdl-menu--bottom-left mdl-js-menu"
+              >
+                <li class="mdl-menu__item" data-val="DE">USD</li>
+                <li class="mdl-menu__item" data-val="BY">EUR</li>
+                <li class="mdl-menu__item" data-val="BY">INR</li>
+                <li class="mdl-menu__item" data-val="BY">MYR</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-6 p-t-20">
+            <div
+              class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width"
+            >
+              <input
+                class="mdl-textfield__input"
+                type="number"
+                id="txtLasttName" name="Amount"
+                value="{{value.Amount}}"
+              />
+              <label class="mdl-textfield__label">Amount</label>
+            </div>
+          </div>
+          {% if value.Admpro %}
+          {% for i in value.Admpro %}
+          <div class="col-lg-12 p-t-20">
+            <div
+              class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width"
+            >
+              <label class="pull-right margin-0">
+                <i class="mdl-icon-toggle__label material-icons" id="addadmission"
+                  >add_box</i
+                >
+              </label>
+              <input class="mdl-textfield__input" type="text" id="txtRollNo" name="Admpro[]" value="{{i}}" />
+              <label class="mdl-textfield__label">Admission Procedure</label>
+            </div>
+          </div>
+          {% endfor %}
+          {% else %}
+          <div class="col-lg-12 p-t-20">
+            <div
+              class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width"
+            >
+              <label class="pull-right margin-0">
+                <i class="mdl-icon-toggle__label material-icons" id="addadmission"
+                  >add_box</i
+                >
+              </label>
+              <input class="mdl-textfield__input" type="text" id="txtRollNo" name="Admpro[]" value="{{i}}" />
+              <label class="mdl-textfield__label">Admission Procedure</label>
+            </div>
+          </div>
+          {% endif %}
+           <div class="col-lg-12 p-t-20" id='newadmission'>
+          </div>
+          {% if value.Perdoc %}
+          {% for i in value.Perdoc%}
+          <div class="col-lg-4 p-t-20">
+            <div
+              class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width"
+            >
+              <label class="pull-right margin-0">
+                <i class="mdl-icon-toggle__label material-icons" id="addpersonal"
+                  >add_box</i
+                >
+              </label>
+              <input class="mdl-textfield__input" type="text" id="txtRollNo" name="Perdoc[]" value="{{i}}" />
+              <label class="mdl-textfield__label">Personal Documents</label>
+            </div>
+          </div>
+          {% endfor %}
+          {% else %}
+          <div class="col-lg-4 p-t-20">
+            <div
+              class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width"
+            >
+              <label class="pull-right margin-0">
+                <i class="mdl-icon-toggle__label material-icons" id="addpersonal"
+                  >add_box</i
+                >
+              </label>
+              <input class="mdl-textfield__input" type="text" id="txtRollNo" name="Perdoc[]" value="{{i}}" />
+              <label class="mdl-textfield__label">Professional Documents</label>
+            </div>
+          </div>
+          {% endif %}
+          {% if value.Acdpro%}
+         {% for i in value.Acdpro%}
+          <div class="col-lg-4 p-t-20">
+            <div
+              class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width"
+            >
+              <label class="pull-right margin-0">
+                <i class="mdl-icon-toggle__label material-icons" id="addacademic"
+                  >add_box</i
+                >
+              </label>
+              <input class="mdl-textfield__input" type="text" id="txtRollNo" name="Acdpro[]" value="{{i}}"/>
+              <label class="mdl-textfield__label">Academic Documents</label>
+            </div>
+          </div>
+          {% endfor %}
+          {% else %}
+          <div class="col-lg-4 p-t-20">
+            <div
+              class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width"
+            >
+              <label class="pull-right margin-0">
+                <i class="mdl-icon-toggle__label material-icons" id="addacademic"
+                  >add_box</i
+                >
+              </label>
+              <input class="mdl-textfield__input" type="text" id="txtRollNo" name="Acdpro[]" value="{{i}}"/>
+              <label class="mdl-textfield__label">Academic Documents</label>
+            </div>
+          </div>
+          {% endif%}
+         {% if value.Prodoc %}
+          {% for i in value.Prodoc %}
+          <div class="col-lg-4 p-t-20">
+            <div
+              class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width"
+            >
+              <label class="pull-right margin-0">
+                <i class="mdl-icon-toggle__label material-icons" id="addprofessional"
+                  >add_box</i
+                >
+              </label>
+              <input class="mdl-textfield__input" type="text" id="txtRollNo" name="Prodoc[]" value="{{i}}" />
+              <label class="mdl-textfield__label">Professional Documents</label>
+            </div>
+          </div>
+          {% endfor %}
+          {% else %}
+          <div class="col-lg-4 p-t-20">
+            <div
+              class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width"
+            >
+              <label class="pull-right margin-0">
+                <i class="mdl-icon-toggle__label material-icons" id="addprofessional"
+                  >add_box</i
+                >
+              </label>
+              <input class="mdl-textfield__input" type="text" id="txtRollNo" name="Prodoc[]" value="{{i}}" />
+              <label class="mdl-textfield__label">Professional Documents</label>
+            </div>
+          </div>
+          {% endif %}
+          <div class="col-lg-4 p-t-20" id="newpersonal">
+          </div>
+          <div class="col-lg-4 p-t-20" id="newacademic">
+          </div>
+          <div class="col-lg-4 p-t-20" id="newprofessional">
+          </div>
+          {% if value.Term %}
+          {% for i in value.Term %}
+          <div class="col-lg-12 p-t-20">
+            <div
+              class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width"
+            >
+              <label class="pull-right margin-0">
+                <i class="mdl-icon-toggle__label material-icons" id="addterms"
+                  >add_box</i
+                >
+              </label>
+              <input class="mdl-textfield__input" type="text" id="txtRollNo" name="Term[]" value="{{i}}"/>
+              <label class="mdl-textfield__label">Terms and Conditions</label>
+            </div>
+          </div>
+          {% endfor %}
+          {% else %}
+          <div class="col-lg-12 p-t-20">
+            <div
+              class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width"
+            >
+              <label class="pull-right margin-0">
+                <i class="mdl-icon-toggle__label material-icons" id="addterms"
+                  >add_box</i
+                >
+              </label>
+              <input class="mdl-textfield__input" type="text" id="txtRollNo" name="Term[]" value="{{i}}"/>
+              <label class="mdl-textfield__label">Terms and Conditions</label>
+            </div>
+          </div>
+          {% endif %}
+          <div class="col-lg-12 p-t-20" id="newterms">
+          </div>
+          <div class="col-lg-12 p-t-20">
+            <label class="control-label col-md-3">Upload Form </label>
+            <div class="col-md-12">
+              <div><input type="file" name="Upload" id="Upload"></div>
+            </div>
+          </div>
+          <div class="col-lg-12 p-t-20 text-center">
+            <button
+              type="submit" onclick="myguru()"
+              class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect m-b-10 m-r-20 btn-pink"
+            >
+              Submit
+            </button>
+            <button
+              type="button"
+              class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect m-b-10 btn-default"
+            >
+              Cancel
+            </button>
+          </div>
+        </div>
+      </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

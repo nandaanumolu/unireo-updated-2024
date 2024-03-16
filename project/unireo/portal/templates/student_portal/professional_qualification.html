@@ -1,0 +1,189 @@
+{% extends 'student_portal/student_nav.html' %} {% block content %}
+<div class="page-bar">
+  <div class="page-title-breadcrumb">
+      <div class=" pull-left">
+          <div class="page-title">Professional Qualification</div>
+      </div>
+      <ol class="breadcrumb page-breadcrumb pull-right">
+          <li><i class="fa fa-home"></i>&nbsp;<a class="parent-item"
+                  href="index.html">Home</a>&nbsp;<i class="fa fa-angle-right"></i>
+          </li>
+         
+          </li>
+          <li class="active">Professional Qualification</li>
+      </ol>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-12">
+    <div class="card-box">
+      <div class="card-head">
+        <header class="p-4">Professional Qualification</header>
+        
+      </div>
+      
+      <div class="card-body row">
+        <div class="card-body row">
+          
+          <form action="/stdpro"  method="post"  enctype="multipart/form-data">
+            {% csrf_token %}
+          
+          <div>
+            <div>
+              <h2>English Profieciency</h2>
+              <label class="pull-right margin-0">
+                <i class="mdl-icon-toggle__label material-icons addenglish"
+                  >add_box</i
+                >
+              </label>
+            </div>
+            {% for record in stdpro %} 
+          <div class="col-lg-6 p-t-20">
+            {% if record.Testeng == '1' %}
+                        <input checked type="checkbox" name="Testeng[]" value="1" />
+                        <label>IELTS</label>
+                        <input  type="checkbox" name="Testeng[]" value="2" />
+                        <label>TOEFL</label>
+                        {% elif record.Testeng == '2' %}
+                        <input  type="checkbox" name="Testeng[]" value="1" />
+                        <label>IELTS</label>
+                        <input checked type="checkbox" name="Testeng[]" value="2" />
+                        <label>TOEFL</label>
+                        {% else %}
+                        <input  type="checkbox" name="Testeng[]" value="1" />
+                        <input  type="checkbox" name="Testeng[]" value="2" />
+                        <label>IELTS</label>
+                        <label>TOEFL</label>
+                        {% endif %}
+                        
+          </div>
+          <div class="col-lg-6 p-t-20">
+            <div
+              class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+              <input class="mdl-textfield__input" type="text" id="date" name="Yeareng[]" value="{{record.Yeareng}}"/>
+              <label class="mdl-textfield__label">Year taken</label>
+            </div>
+          </div>
+          <div class="col-lg-6 p-t-20">
+            <div
+              class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width"
+            >
+              <input class="mdl-textfield__input" type="text" id="txtRollNo" name="Overallscoreeng[]" value="{{record.Overallscoreeng}}"/>
+              <label class="mdl-textfield__label">Overall Score</label>
+            </div>
+          </div>
+          <div class="col-lg-6 p-t-20">
+            <div
+              class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width"
+            >
+              <input
+                class="mdl-textfield__input"
+                type="file"
+                id="txtLasttName"
+                name="Uploadeng[]" 
+              />
+              <a href="media/record.Uploadeng">{{record.Uploadeng}}</a>
+              <label class="mdl-textfield__label"></label>
+            </div>
+          </div>
+
+        </div>
+        {% endfor %}
+          <div class="row" id="addenglish"></div>
+        
+          <div>
+            <h2>Admission test</h2>
+            <label class="pull-right margin-0">
+              <i class="mdl-icon-toggle__label material-icons addgre"
+                >add_box</i
+              >
+            </label>
+          </div>
+          <div>
+          {% for record in stdpro1 %}
+          <div class="col-lg-6 p-t-20">
+                  {% if record.Testad == '1' %}
+                        <input checked type="checkbox" name="Testad[]" value=" 1" />
+                        <label>GMAT</label>
+                        <input type="checkbox" name="Testad[]" value="2" />
+                        <label>GRE</label>
+                  {% elif record.Testad == '2' %}
+                  <input  type="checkbox" name="Testad[]" value=" 1" />
+                  <label>GMAT</label>
+                  <input checked type="checkbox" name="Testad[]" value="2" />
+                  <label>GRE</label>
+                  {% else %}
+                  <input  type="checkbox" name="Testad[]" value=" 1" />
+                  <label>GMAT</label>
+                  <input  type="checkbox" name="Testad[]" value="2" />
+                  <label>GRE</label>
+                  {% endif %}
+
+          </div>
+          <div class="col-lg-6 p-t-20">
+            <div
+              class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width"
+            >
+              <input class="mdl-textfield__input" type="text" id="date" name="Yearad[]" value="{{record.Yearad}}" />
+              <label class="mdl-textfield__label">Year Taken</label>
+            </div>
+          </div>
+          <div class="col-lg-6 p-t-20">
+            <div
+            class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width"
+          >
+            <input class="mdl-textfield__input" type="text" id="txtRollNo" name="Overallscoread[]" value="{{record.Overallscoread}}"/>
+            <label class="mdl-textfield__label">Overall Score</label>
+          </div>
+          </div>
+          <div class="col-lg-6 p-t-20">
+            <div
+              class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width"
+            >
+              <input
+                class="mdl-textfield__input"
+                type="file"
+                id="txtLasttName"
+                name="Uploadad[]" value="{{value.Uploadad}}"
+              />
+              <a href="media/record.Uploadad">{{record.Uploadad}}</a>
+              <label class="mdl-textfield__label"></label>
+            </div>
+            {% endfor %}
+            </div>
+          </div>
+          <div class="row" id="addgre"></div>
+
+          <div class="col-lg-12 p-t-20 text-center">
+          <a href="/stdacd">
+          <button
+              type="button"
+              class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect m-b-10 btn-default"
+            >
+              Previous
+            </button>
+            </a>
+            <button
+              type="submit" onclick="myguru()"
+              class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect m-b-10 m-r-20 btn-pink"
+            >
+              Submit
+            </button>
+          
+            <a href="/stdcour">
+            <button
+              type="button"
+              class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect m-b-10 btn-default"
+            >
+              Next
+            </button>
+            </a>
+          </div>
+       
+        </div>
+      </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

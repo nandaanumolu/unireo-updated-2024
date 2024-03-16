@@ -1,0 +1,141 @@
+{% extends 'student_portal/student_nav.html' %}
+{% block content %}
+<div class="page-bar">
+    <div class="page-title-breadcrumb">
+        <div class=" pull-left">
+            <div class="page-title">Hai, <span style="text-transform:capitalize">{{value.Name}}......</span></div>
+        </div>
+        <ol class="breadcrumb page-breadcrumb pull-right">
+            <li><i class="fa fa-home"></i>&nbsp;<a class="parent-item" href="/">Home</a>&nbsp;
+            </li>
+
+        </ol>
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-head">
+        <header>Welcome to Unireo </header><br>
+
+        <div class="profile-desc" style="margin-left: 20px;"><p>
+            Unireo is a platform where you can search across the globe for your desired University and your
+            passioned course.
+            Our platform allows to not only search and register. It directs in such a way that you can achieve your
+            goals.Apply Uni is one best Platforms in the world that makes sure
+            the student is directed towards the desired university.
+            Apply uni is user Friendly platform.</p>
+        </div>
+    </div>
+</div>
+<div style="font-size: larger;  ">
+    <header> <a href="student/search" style="color: black;">Start a new application </a> </header>
+
+</div>
+<h3>Search According to Country</h3>
+<div class="row">
+    <div class="col-md-4">
+        <div class="card card-box">
+            <div class="card-body no-padding ">
+                <div class="doctor-profile">
+                    <img src="https://images.mygoodtimes.in/wp-content/uploads/2019/11/05135926/1111.jpg"
+                        class="doctor-pic" alt="">
+                    <div class="profile-usertitle">
+                        <div class="doctor-name">India</div>
+                    </div>
+                    <div> </div>
+                    <div class="profile-userbuttons">
+                        <a href="/student/search/india" class="btn btn-circle blue-bgcolor btn-sm">Search</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card card-box">
+            <div class="card-body no-padding ">
+                <div class="doctor-profile">
+                    <img src="https://images.mygoodtimes.in/wp-content/uploads/2019/11/05135926/1111.jpg"
+                        class="doctor-pic" alt="">
+                    <div class="profile-usertitle">
+                        <div class="doctor-name">USA</div>
+                    </div>
+                    <div> </div>
+                    <div class="profile-userbuttons">
+                        <a href="/student/search/usa" class="btn btn-circle blue-bgcolor btn-sm">Search</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card card-box">
+            <div class="card-body no-padding ">
+                <div class="doctor-profile">
+                    <img src="https://images.mygoodtimes.in/wp-content/uploads/2019/11/05135926/1111.jpg"
+                        class="doctor-pic" alt="">
+                    <div class="profile-usertitle">
+                        <div class="doctor-name">England</div>
+                    </div>
+                    <div> </div>
+                    <div class="profile-userbuttons">
+                        <a href="/student/search/england" class="btn btn-circle blue-bgcolor btn-sm">Search</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+<div class="card">
+    <div class="card-head">
+        <header>Why Study in Abroad</header><br>
+
+        <div class="profile-desc" style="margin-left: 20px;">
+           <p> Studying abroad helps you to learn new languages, appreciate other cultures, overcome challenges of living
+            in another country and gain a greater understanding of the world. These are all things that
+            modern businesses look for when hiring, and such traits will only become more important in the future.
+            <br><br>
+            Another reason you might consider studying abroad is for the chance to experience different styles of
+            education. By enrolling in a study abroad program, you’ll have the chance to see a side of your major that
+            you may not have been exposed to at home.
+
+            You’ll find that completely immersing yourself in the education system of your host country is a great way
+            to really experience and understand the people, its traditions, and its culture. Education is the
+            centerpiece of any study abroad trip—it is, after all, a study
+            abroad program—and choosing the right school is a very important factor.
+            <ul style="list-style-type: disc;">
+                <li>
+                    Explore the world
+                </li>
+                <li>Education</li>
+                <li>Take in a New Culture</li>
+                <li>Hone Your Language Skills</li>
+                <li>Make Lifelong Friends</li>
+                <li>Find New Interests</li>
+                <li>Career Opportunities</li>
+                
+                
+            </ul>
+        </p>
+        </div>
+        <header>Why Unireo</header><br>
+        <div class="profile-desc" style="margin-left: 20px;">
+            <ul style="list-style-type: disc;">
+                <li>
+                    Course Selection and Guidance
+                </li>
+                <li>University Admission</li>
+                <li>Documentation and Visa Assistance</li>
+                <li>Support during your Study </li>
+                <li>Support during Stay</li>
+                
+            </ul>
+        </div>
+        
+        
+        
+
+    </div>
+</div>
+
+{% endblock %}

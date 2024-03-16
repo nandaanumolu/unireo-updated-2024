@@ -1,0 +1,84 @@
+{% extends 'index.html' %}
+{% block content %}
+<div class="page-bar">
+    <div class="page-title-breadcrumb">
+        <div class=" pull-left">
+            <div class="page-title">Add Events</div>
+        </div>
+        <ol class="breadcrumb page-breadcrumb pull-right">
+            <li><i class="fa fa-home"></i>&nbsp;<a class="parent-item"
+                    href="/unihome">Home</a>&nbsp;<i class="fa fa-angle-right"></i>
+            </li>
+            <li><a class="parent-item" href="">Events</a>&nbsp;<i class="fa fa-angle-right"></i>
+            </li>
+            
+            <li class="active">Add Event</li>
+        </ol>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <div class="card-box">
+            <div class="card-head">
+                <header>Event Information</header>
+                <button id="panel-button"
+                    class="mdl-button mdl-js-button mdl-button--icon pull-right"
+                    data-upgraded=",MaterialButton">
+                    <i class="material-icons">more_vert</i>
+                </button>
+                <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
+                    data-mdl-for="panel-button">
+                    <li class="mdl-menu__item"><i class="material-icons">assistant_photo</i>Action
+                    </li>
+                    <li class="mdl-menu__item"><i class="material-icons">print</i>Another action
+                    </li>
+                    <li class="mdl-menu__item"><i class="material-icons">favorite</i>Something else
+                        here</li>
+                </ul>
+            </div>
+            <form action="/addevents" method="post"  enctype="multipart/form-data">
+                {% csrf_token %}
+            <div class="card-body row">
+                <div class="col-lg-6 p-t-20">
+                    <div
+                        class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+                        <input class="mdl-textfield__input" type="text" id="txtFirstName" name="Ename" value="{{value.Ename}}">
+                        <label class="mdl-textfield__label">Event Name</label>
+                    </div>
+                </div>
+                <div class="col-lg-6 p-t-20">
+                    <div
+                        class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+                        <input class="mdl-textfield__input" type="text" id="date" name="Edate" value="{{value.Edate}}">
+                        <label class="mdl-textfield__label">Date of Event Occured</label>
+                    </div>
+                </div>
+                <div class="col-lg-12 p-t-20">
+                    <div class="mdl-textfield mdl-js-textfield txt-full-width">
+                        <textarea class="mdl-textfield__input" rows="4" id="text7" name="Edetails" value="{{value.Edetails}}"></textarea>
+                        <label class="mdl-textfield__label" for="text7">Event Details</label>
+                    </div>
+                </div>
+              <div class="col-lg-12 p-t-20">
+                    <label class="control-label col-md-3">Uplode Photo
+                    </label>
+                    <div class="col-md-12">
+                        <div> <input type="file" name="Ephoto" id="Ephoto" value="{{value.Ephoto}}"></div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-12 p-t-20 text-center">
+                    {% if request.session.Emailemp == None %}
+                    <button type="submit" onclick="myguru()"
+                        class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect m-b-10 m-r-20 btn-pink">Submit</button>
+                        <button type="button"
+                        class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect m-b-10 btn-default">Cancel</button>
+                        {% endif %}
+                    
+                </div>
+            </div>
+        </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

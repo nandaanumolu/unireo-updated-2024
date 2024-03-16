@@ -1,0 +1,268 @@
+{% extends 'student_portal/student_nav.html' %} 
+
+{% block content %}
+<style>
+  select:focus{
+    border: none;
+    border-bottom: 1px solid gray;
+    
+  }
+  .intl-tel-input{
+    width: 100%;
+  }
+</style>
+<div class="page-bar">
+  <div class="page-title-breadcrumb">
+      <div class=" pull-left">
+          <div class="page-title">Personal Details</div>
+      </div>
+      <ol class="breadcrumb page-breadcrumb pull-right">
+          <li><i class="fa fa-home"></i>&nbsp;<a class="parent-item"
+                  href="index.html">Home</a>&nbsp;<i class="fa fa-angle-right"></i>
+          </li>
+         
+          </li>
+          <li class="active">Personal Details</li>
+      </ol>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-12">
+    <div class="card-box">
+      <div class="card-head">
+        <header class="p-4">Personal Details</header>
+        
+      </div>
+      <form action="/stdind" method="post">
+        {% csrf_token %}
+      <div class="card-body row">
+        <div class="card-body row " >
+          
+          
+          <div class="col-lg-6 p-t-20">
+            <div
+              class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width"
+            >
+              <input
+                class="mdl-textfield__input"
+                type="text"
+                id="txtFirstName" name="Firstname" value="{{value.Firstname}}"
+              />
+              <label class="mdl-textfield__label">First name</label>
+            </div>
+          </div>
+          <div class="col-lg-6 p-t-20">
+            <div
+              class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width"
+            >
+              <input class="mdl-textfield__input" type="text" id="txtRollNo" name="Lastname" value="{{value.Lastname}}"/>
+              <label class="mdl-textfield__label">Last Name</label>
+            </div>
+          </div>
+          <div class="col-lg-6 p-t-20">
+            <div
+              class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select getmdl-select__fix-height txt-full-width"
+            >
+              <input
+                class="mdl-textfield__input"
+                type="text"
+                id="list2"
+                value="{{value.Gender}}"
+                readonly
+                tabindex="-1" name="Gender"
+              />
+              <label for="list2" class="pull-right margin-0">
+                <i class="mdl-icon-toggle__label material-icons"
+                  >keyboard_arrow_down</i
+                >
+              </label>
+              <label for="list2" class="mdl-textfield__label">Gender</label>
+              <ul
+                data-mdl-for="list2"
+                class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
+    
+                <li class="mdl-menu__item" data-val="DE">male</li>
+                <li class="mdl-menu__item" data-val="BY">Female</li>
+                <li class="mdl-menu__item" data-val="BY">Others</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-6 p-t-20">
+            <div
+              class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width"
+            >
+              <input
+                class="mdl-textfield__input"
+                type="text"
+                id="txtLasttName" name="Nationality" value="{{value.Nationality}}"
+              />
+              <label class="mdl-textfield__label">Nationality</label>
+            </div>
+          </div>
+
+          <div class="col-lg-6 p-t-20">
+            <div
+              class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select getmdl-select__fix-height txt-full-width"
+            >
+              <input
+                class="mdl-textfield__input"
+                type="text"
+                id="list1"
+                placeholder="{{value.Maritial}}"
+                readonly
+                tabindex="-1"
+                name="Maritial" value="{{value.Maritial}}"
+              />
+              <label for="list1" class="pull-right margin-0">
+                <i class="mdl-icon-toggle__label material-icons"
+                  >keyboard_arrow_down</i
+                >
+              </label>
+              <label for="list1" class="mdl-textfield__label"
+                >Martial status</label
+              >
+              <ul
+                data-mdl-for="list1"
+                class="mdl-menu mdl-menu--bottom-left mdl-js-menu"
+              >
+                <li class="mdl-menu__item" data-val="DE">Single</li>
+                <li class="mdl-menu__item" data-val="BY">Married</li>
+                <li class="mdl-menu__item" data-val="BY">Divorced</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-6 p-t-20">
+            <div
+              class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width"
+            >
+              <input
+                class="mdl-textfield__input"
+                type="email"
+                id="txtLasttName" name="Email" value="{{value.Email}}"
+              />
+              <label class="mdl-textfield__label">Email</label>
+            </div>
+          </div>
+          <div class="col-lg-6 p-t-20">
+            <div
+              class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width"
+            >
+              <input
+                class="mdl-textfield__input"
+                type="tel"
+                id="phone" name="Phonenumber" value="{{value.Phonenumber}}" style="width: 100%;"
+                placeholder="Enter phone number"
+              />
+              <label class="mdl-textfield__label" style="margin-top: -25px;">phone</label>
+            </div>
+            
+          </div>
+          <!--<div class="col-lg-6 p-t-20">
+            <div
+              class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width"
+            >
+            
+
+              <input
+                class="mdl-textfield__input"
+                type="number"
+                id="txtLasttName" name="Phonenumber" value="{{value.Phonenumber}}"
+              />
+              <label class="mdl-textfield__label">Phone Number</label>
+            </div>
+          </div>-->
+          <div class="col-lg-6 p-t-20">
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+						<input class="mdl-textfield__input" type="text" id="date" name="Dateofbirth" value="{{value.Dateofbirth}}">
+						<label class="mdl-textfield__label">Date of Birth</label>
+						</div>
+          </div>
+          <div class="col-lg-6 p-t-20">
+            <div
+              class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width"
+            >
+              <input
+                class="mdl-textfield__input"
+                type="text"
+                id="txtLasttName" name="Address" value="{{value.Address}}"
+              />
+              <label class="mdl-textfield__label">Address</label>
+            </div>
+          </div>
+          
+          <div class="col-lg-6 p-t-19.5">
+            {% if value.Country%}
+            <div
+            class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width"
+          >
+            <input
+              class="mdl-textfield__input"
+              type="text"
+              id="txtLasttName" name="Country" value="{{value.Country}}"
+            />
+            <label class="mdl-textfield__label">Country</label>
+          </div>
+            {% else %}
+           
+               <select id="country" name ="Country" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width" value="{{value.Country}}" style="border: none;border-bottom:1px solid gray;"></select>
+     {% endif %}
+    </div>
+    <div class="col-lg-6 p-t-20 " >
+           
+         {% if value.State %}
+         <div
+              class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width"
+            >
+              <input
+                class="mdl-textfield__input"
+                type="text"
+                id="txtLasttName"  name="State" value="{{value.State}}"
+              />
+              <label class="mdl-textfield__label">State</label>
+            </div>
+  
+  {% else %}     
+<select name ="State" id ="state"  value="{{value.State}}" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width" style="border: none;border-bottom:1px solid gray;width: 100%;"></select>  
+{% endif %}
+</div>
+<div class="col-lg-6 p-t-20">
+  <div
+    class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width"
+  >
+    <input
+      class="mdl-textfield__input"
+      type="text"
+      id="txtLasttName" name="City" value="{{value.City}}"
+    />
+    <label class="mdl-textfield__label">City</label>
+  </div>
+</div>
+ 
+          
+
+          <div class="col-lg-12 p-t-20 text-center">
+            <button
+              type="submit" onclick="myguru()"
+              class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect m-b-10 m-r-20 btn-pink"
+            >
+              Submit
+            </button>
+            <a href="/stdacd">
+            <button
+              type="button"
+              class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect m-b-10 btn-default"
+            >
+              Next
+            </button>
+          </a>
+          </div>
+        </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  
+</script>
+{% endblock %}

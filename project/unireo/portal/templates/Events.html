@@ -1,0 +1,59 @@
+{% extends 'index.html' %}
+{% block content %}
+<div class="page-bar">
+    <div class="page-title-breadcrumb">
+        <div class=" pull-left">
+            <div class="page-title">Events</div>
+        </div>
+        <ol class="breadcrumb page-breadcrumb pull-right">
+            <li><i class="fa fa-home"></i>&nbsp;<a class="parent-item"
+                    href="/unihome">Home</a>&nbsp;<i class="fa fa-angle-right"></i>
+            </li>
+           
+            </li>
+            <li class="active">All Events</li>
+
+        </ol>
+    </div>
+</div>
+
+<div class="row">
+    {% for i in listeve %}
+    <div class="modal fade" id="delete" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">{{i.Ename}}</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Are You sure You Want to delete
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>
+    <div class="col">
+        <div class="card " style="width: 25rem;">
+            <div class="card-header">
+               <span>{{i.Edate}}</span>
+               <span class="pull-right">
+                   <a href="events/{{i.Ename}}/edit"><i class="fa fa-pencil p-2" style="color: blue;"></i></a>
+                    <a href="events/{{i.Ename}}/delete" data-toggle="tooltip" title="Delete" data-bs-toggle="modal" data-bs-target=""><i class="fa fa-trash" style="color: red;"></i></a>
+                </span>
+            </div>
+            <img src="https://blogmedia.evbstatic.com/wp-content/uploads/wpmulti/sites/16/2017/08/25172702/Screen-Shot-2017-08-25-at-5.20.31-pm.png" class="card-img-top" alt="...">
+            <div class="card-body">
+               <h3 class="card-title text-center">{{i.Ename}}</h3>
+            </div>
+          </div>
+    </div>
+    {% endfor %}
+    
+   
+</div>
+
+{% endblock %}

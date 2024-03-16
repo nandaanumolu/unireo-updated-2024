@@ -1,0 +1,100 @@
+{% extends 'super_admin/nav.html' %} 
+{% block content %}
+
+<div class="page-bar">
+    <div class="page-title-breadcrumb">
+        <div class=" pull-left">
+            <div class="page-title">University Courses</div>
+        </div>
+        <ol class="breadcrumb page-breadcrumb pull-right">
+            <li><i class="fa fa-home"></i>&nbsp;<a class="parent-item"
+                    href="/unihome">Home</a>&nbsp;<i class="fa fa-angle-right"></i>
+            </li>
+            
+            <li class="active">Courses</li>
+        </ol>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="tabbable-line">
+
+            <div class="tab-content">
+                <div class="tab-pane active fontawesome-demo" id="tab1">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="card card-box">
+                                <div class="card-head">
+                                    <header class="p-4">Courses</header>
+
+                                </div>
+                                <div class="card-body ">
+                                    <div class="row">
+                                        <div class="col-md-6 col-sm-6 col-6">
+                                            <div class="btn-group">
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <form action="/admin/addcommision/{{uniname}}" method="post">
+                                        {% csrf_token %}
+                                    <div class="table-scrollable">
+                                        <table
+                                            class="table table-striped table-bordered table-hover table-checkable order-column valign-middle"
+                                            id="example4">
+                                            <thead>
+                                                <tr>
+                                                    <th></th>
+                                                    <th> No </th>
+                                                    <th> Name </th>
+                                                    <th> Currency </th>
+                                                    <th> Amount </th>
+                                                    <th>Course Commision</th>
+                                                    
+                                                    
+                                                </tr>
+                                            </thead>
+                                            
+                                            <tbody>
+                                                {% for i in courses1 %}
+                                                <tr class="odd gradeX">
+                                                    <td class="patient-img">
+                                                        <img src="https://image.shutterstock.com/image-photo/confident-handsome-student-holding-books-260nw-366568778.jpg"
+                                                            alt="">
+                                                    </td>
+                                                    <td class="left">{{forloop.counter}}</td>
+                                                    <td><input type="text" name="name[]" value="{{i.Name}}" readonly></td>    
+                                                    <td><input type="text" name="curr[]" value="{{i.Curr}}" readonly></td>
+                                                    <td class="left"><input type="text" name="amo[]" value="{{i.Amo}}" readonly></td>
+                                                    
+                                                    <td><input type="text" name="com[]" value="{{i.com}}" required></td>
+                                                    
+                                                </tr>
+                                                
+                                                
+                                                {% endfor %}
+
+                                            </tbody>
+                                            
+                                        </table>
+             <button style="margin-left:500px"
+                type="submit" 
+                class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect m-b-10 m-r-20 btn-pink"
+              >
+                Submit
+              </button>
+            </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

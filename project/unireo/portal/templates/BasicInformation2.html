@@ -1,0 +1,260 @@
+{% extends 'index.html' %}
+{% block content %}
+<div class="page-bar">
+    <div class="page-title-breadcrumb">
+        <div class=" pull-left">
+            <div class="page-title"></div>
+        </div>
+        <ol class="breadcrumb page-breadcrumb pull-right">
+            <li><i class="fa fa-home"></i>&nbsp;<a class="parent-item" href="/unihome">Home</a>&nbsp;<i
+                    class="fa fa-angle-right"></i>
+            </li>
+            <li><a class="parent-item" href="">About Institution</a>&nbsp;<i class="fa fa-angle-right"></i>
+            </li>
+            <li class="active">Extra Details</li>
+        </ol>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <div class="card-box">
+            <div class="card-head">
+                <header>Basic Information</header>
+                <button id="panel-button" class="mdl-button mdl-js-button mdl-button--icon pull-right"
+                    data-upgraded=",MaterialButton">
+                    <i class="material-icons">more_vert</i>
+                </button>
+                <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
+                    data-mdl-for="panel-button">
+                    <li class="mdl-menu__item"><i class="material-icons">assistant_photo</i>Action
+                    </li>
+                    <li class="mdl-menu__item"><i class="material-icons">print</i>Another action
+                    </li>
+                    <li class="mdl-menu__item"><i class="material-icons">favorite</i>Something else
+                        here</li>
+                </ul>
+            </div>
+            
+                <form action="/univcon" method="post" enctype="multipart/form-data">
+                    <div class="card-body row">
+                    {% csrf_token %}
+                <div class="col-lg-6 p-t-20">
+                    
+                  <div class="row">
+                    <span style="
+                        font-size: 14px !important;
+                        font-weight: 400 !important;
+                        color: #154770 !important;
+                    ">Graduation Type</span>
+                    {% if 'UG' in value.Intakes and 'PG' in value.Intakes %}
+                      <div class="col-lg-2">
+                        
+                        
+                        <label class="mdl-checkbox mdl-js-checkbox" for="checkbox1">
+                            <input type="checkbox" id="checkbox1" class="mdl-checkbox__input" name="Intakes[]" value="UG" checked> 
+                            <span class="mdl-checkbox__label">UG</span>
+                        </label>
+                        
+                      </div>
+                      
+                      <div class="col-lg-2">
+                        <label class="mdl-checkbox mdl-js-checkbox" for="checkbox2">
+                            <input type="checkbox" id="checkbox2" class="mdl-checkbox__input" name="Intakes[]" value="PG" checked>
+                                
+                            <span class="mdl-checkbox__label">PG</span>
+                        </label>
+    
+                      </div>
+                      
+                      {% elif  'PG' in value.Intakes  %}
+                      <div class="col-lg-2">
+                        
+                        <label class="mdl-checkbox mdl-js-checkbox" for="checkbox2">
+                            <input type="checkbox" id="checkbox2" class="mdl-checkbox__input" name="Intakes[]" value="UG"  >
+                                
+                            <span class="mdl-checkbox__label">PG</span>
+                        </label>
+                      </div>
+                      <div class="col-lg-2">
+                        <label class="mdl-checkbox mdl-js-checkbox" for="checkbox1">
+                            <input type="checkbox" id="checkbox1" class="mdl-checkbox__input" name="Intakes[]" value="PG" checked > 
+                            <span class="mdl-checkbox__label">UG</span>
+                        </label>
+                        
+                      </div>
+                      {% elif 'UG' in value.Intakes  %}
+                      <div class="col-lg-2">
+                        
+                        <label class="mdl-checkbox mdl-js-checkbox" for="checkbox2">
+                            <input type="checkbox" id="checkbox2" class="mdl-checkbox__input" name="Intakes[]" value="UG" checked >
+                                
+                            <span class="mdl-checkbox__label">PG</span>
+                        </label>
+                      </div>
+                      <div class="col-lg-2">
+                        <label class="mdl-checkbox mdl-js-checkbox" for="checkbox1">
+                            <input type="checkbox" id="checkbox1" class="mdl-checkbox__input" name="Intakes[]" value="PG" > 
+                            <span class="mdl-checkbox__label">UG</span>
+                        </label>
+                        
+                      </div>
+
+                        {% else %}
+                        <div class="col-lg-2">
+                        <label class="mdl-checkbox mdl-js-checkbox" for="checkbox1">
+                            <input type="checkbox" id="checkbox1" class="mdl-checkbox__input" name="Intakes[]" value="UG" > 
+                            <span class="mdl-checkbox__label">UG</span>
+                        </label>
+                        
+                      </div>
+                      <div class="col-lg-2">
+                        
+                        <label class="mdl-checkbox mdl-js-checkbox" for="checkbox2">
+                            <input type="checkbox" id="checkbox2" class="mdl-checkbox__input" name="Intakes[]" value="PG">
+                                
+                            <span class="mdl-checkbox__label">PG</span>
+                        </label>
+   
+                    </div>
+                    {% endif %}
+                  </div>
+                  
+                </div>
+                <div class="col-lg-6 p-t-20">
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+                        <input class="mdl-textfield__input" type="text" id="txtLasttName" name="Award" value="{{value.Award}}">
+                        <label class="mdl-textfield__label">Awarding Body</label>
+                    </div>
+                </div>
+                <div class="col-lg-6 p-t-20">
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+                        <input class="mdl-textfield__input" type="number" id="txtRollNo"  name="Staff" value="{{value.Staff}}">
+                        <label class="mdl-textfield__label">No of Staffs</label>
+                    </div>
+                </div>
+                <div class="col-lg-6 p-t-20">
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+                        <input class="mdl-textfield__input" type="number" id="txtemail"  name="Students" value="{{value.Students}}">
+                        <label class="mdl-textfield__label">No of Students</label>
+                        <span class="mdl-textfield__error"></span>
+                    </div>
+                </div>
+                <div class="col-lg-6 p-t-20">
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+                        <input class="mdl-textfield__input" type="text" id="txtParentName"  name="Departments" value="{{value.Departments}}">
+                        <label class="mdl-textfield__label">No of Departments</label>
+                    </div>
+                </div>
+                <div class="col-lg-6 p-t-20">
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+                        <input class="mdl-textfield__input" type="text" id="txtParentName"  name="Location" value="{{value.Location}}">
+                        <label class="mdl-textfield__label">Location</label>
+                    </div>
+                </div>
+                <div class="col-lg-12 p-t-20">
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">  
+                        <input class="mdl-textfield__input" type="text" id="txtParentName"  name="Link" value="{{value.Link}}">
+                        <label class="mdl-textfield__label">Univerity Linkedin url</label>
+                    </div>
+                </div>
+                <div class="col-lg-12 p-t-20">
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+                        <input class="mdl-textfield__input" type="text" id="txtParentName"  name="Face" value="{{value.Face}}">
+                        <label class="mdl-textfield__label">Univerity Facebook url</label>
+                    </div>
+                </div>
+                <div class="col-lg-12 p-t-20">
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+                        <input class="mdl-textfield__input" type="text" id="txtParentName"  name="Insta" value="{{value.Insta}}">
+                        <label class="mdl-textfield__label">Univerity Instagram url</label>
+                    </div>
+                </div>
+                {% if value.Req %}
+                
+                <div class="col-lg-12 p-t-20">
+                    {% for i in value.Req %}
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+                        <i class="mdl-icon-toggle__label material-icons addreq pull-right" >add_box</i>
+                        <input class="mdl-textfield__input" type="text" id="txtParentName"  name="Req[]" value="{{i}}">
+                        <label class="mdl-textfield__label">Requirments</label>
+                    </div>
+                    {% endfor %}
+                </div>
+                {% else %}
+                <div class="col-lg-12 p-t-20">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+                    <i class="mdl-icon-toggle__label material-icons addreq pull-right" >add_box</i>
+                    <input class="mdl-textfield__input" type="text" id="txtParentName"  name="Req[]" value="{{value.Req}}">
+                    <label class="mdl-textfield__label">Requirments</label>
+                </div>
+            </div>
+            {% endif %}
+                <div class="col-lg-12 p-t-20" id="requi">
+                   
+                </div>
+                {% if value.Features %}
+                <div class="col-lg-12 p-t-20">
+                    {% for i in value.Features %}
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+                        <i class="mdl-icon-toggle__label material-icons addfea pull-right" >add_box</i>
+        
+                        <input class="mdl-textfield__input" type="text" id="txtParentName"  name="Features[]" value="{{i}}">
+                        <label class="mdl-textfield__label">Features</label>
+                    </div>
+                    {% endfor %}
+                </div>
+                {% else %}
+                <div class="col-lg-12 p-t-20">
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+                        <i class="mdl-icon-toggle__label material-icons addfea pull-right" >add_box</i>
+        
+                        <input class="mdl-textfield__input" type="text" id="txtParentName"  name="Features[]" value="{{value.Features}}">
+                        <label class="mdl-textfield__label">Features</label>
+                    </div>
+                </div>
+                {% endif %}
+                <div class="col-lg-12 p-t-20" id="feature">
+                   
+                </div>
+
+               <!-- <div class="col-lg-12 p-t-20">
+                    <label class="control-label col-md-3">Upload University Video
+                    </label>
+                    <div class="col-md-12">
+                        <div id="id_dropzone" class="dropzone" type="file"  name="Video" id="Video">
+                            <a href="{{value.Video}}">clickhere</a>
+                        </div>
+                    </div>
+                </div> -->
+
+                <div class="col-lg-12 p-t-20">
+                    <div
+                      class="wrap-input100 validate-input rs1-wrap-input100"
+                      data-validate=""
+                    >
+                      <input
+                        type="file"
+                        class="form-control-file input100"
+                        id="Video"
+                        name="Video"
+                      />
+                      <a href="{{value.Video}}">clickhere</a>
+      
+                      <span class="focus-input100"></span>
+                    </div>
+                  </div>
+                
+                <div class="col-lg-12 p-t-20 text-center">
+                   <a href="/univdetail"> <button type="button" 
+                        class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect m-b-10 btn-circle btn-default">Previous</button></a>
+                    {% if request.session.Emailemp == None %}
+                    <button type="submit" onclick="myguru()"
+                        class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect m-b-10 btn-circle btn-pink">Submit</button>
+                    {% endif %}
+                </div>
+            </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

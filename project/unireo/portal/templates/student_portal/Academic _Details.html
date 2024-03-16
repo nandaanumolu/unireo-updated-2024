@@ -1,0 +1,347 @@
+{% extends 'student_portal/student_nav.html' %} {% block content %}
+<div class="page-bar">
+  <div class="page-title-breadcrumb">
+      <div class=" pull-left">
+          <div class="page-title">Academic Details</div>
+      </div>
+      <ol class="breadcrumb page-breadcrumb pull-right">
+          <li><i class="fa fa-home"></i>&nbsp;<a class="parent-item"
+                  href="/student/home">Home</a>&nbsp;<i class="fa fa-angle-right"></i>
+          </li>
+         
+          </li>
+          <li class="active">Academic Details</li>
+      </ol>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-12">
+    <div class="card-box">
+      <form action="/stdacd" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+      <div class="card-head">
+        <header class="p-4">Academic Details</header>
+        
+      </div>
+      <div class="card-body row">
+        <div class="card-body row">
+        <h2>High School </h2>
+          <div class="col-lg-6 p-t-20">
+            <div
+              class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select getmdl-select__fix-height txt-full-width"
+            >
+              <input
+                class="mdl-textfield__input"
+                type="text"
+                id="list3"
+
+                readonly
+                tabindex="-1" name="Sscqual" value="{{value.Sscqual}}"
+              />
+              <label for="list3" class="pull-right margin-0">
+                <i class="mdl-icon-toggle__label material-icons"
+                  >keyboard_arrow_down</i
+                >
+              </label>
+              <label for="list3" class="mdl-textfield__label">Select Class</label>
+              <ul
+                data-mdl-for="list3"
+                class="mdl-menu mdl-menu--bottom-left mdl-js-menu"
+              >
+                <li class="mdl-menu__item" data-val="DE">10</li>
+                <li class="mdl-menu__item" data-val="BY">9</li>
+              </ul>
+            </div>
+            
+          </div>
+          <div class="col-lg-6 p-t-20">
+            <div
+											class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+											<input class="mdl-textfield__input" type="text" id="date" name="Sscdate" value="{{value.Sscdate}}">
+											<label class="mdl-textfield__label">Date of Completion</label>
+										</div>
+          </div>
+          <div class="col-lg-6 p-t-20">
+           <div
+              class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width"
+            >
+              <input class="mdl-textfield__input" type="text" id="txtRollNo" name="Sscname" value="{{value.Sscname}}"/>
+              <label class="mdl-textfield__label">Name of the School</label>
+            </div>
+          </div>
+          <div class="col-lg-6 p-t-20">
+            <div
+              class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width"
+            >
+              <input class="mdl-textfield__input" type="text" id="txtRollNo" name="Sscmarks" value="{{value.Sscmarks}}" />
+              <label class="mdl-textfield__label">Marks Obtained</label>
+            </div>
+          </div>
+          <div class="col-lg-6 p-t-20">
+            <div
+              class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select getmdl-select__fix-height txt-full-width"
+            >
+              <input
+                class="mdl-textfield__input"
+                type="text"
+                id="list500"
+
+                readonly
+                tabindex="-1" name="Sscgrading" value="{{value.Sscgrading}}"
+              />
+              <label for="list500" class="pull-right margin-0">
+                <i class="mdl-icon-toggle__label material-icons"
+                  >keyboard_arrow_down</i
+                >
+              </label>
+              <label for="list500" class="mdl-textfield__label">Grading Scheme</label>
+              <ul
+                data-mdl-for="list500"
+                class="mdl-menu mdl-menu--bottom-left mdl-js-menu"
+              >
+                <li class="mdl-menu__item" data-val="DE">% Scale</li>
+                <li class="mdl-menu__item" data-val="BY">Points Scale</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-6 p-t-20">
+            <div
+              class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width"
+            >
+            
+              <input
+                class="mdl-textfield__input"
+                type="file"
+                id="SscDoc" name="SscDoc" value=" media/{{value.SscDoc}}"
+                 />
+                 <a href="media/{{value.SscDoc}}">{{value.SscDoc}}</a>
+              <label class="mdl-textfield__label"></label>
+            </div>
+          </div>
+
+
+          <h2>Intermediate school </h2>
+          <div class="col-lg-6 p-t-20">
+            <div
+              class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select getmdl-select__fix-height txt-full-width"
+            >
+              <input
+                class="mdl-textfield__input"
+                type="text"
+                id="list5"
+                readonly
+                tabindex="-1" name="Intqual" value="{{value.Intqual}}"
+              />
+              <label for="list5" class="pull-right margin-0">
+                <i class="mdl-icon-toggle__label material-icons"
+                  >keyboard_arrow_down</i
+                >
+              </label>
+              <label for="list5" class="mdl-textfield__label">Qualification</label>
+              <ul
+                data-mdl-for="list5"
+                class="mdl-menu mdl-menu--bottom-left mdl-js-menu"
+              >
+                <li class="mdl-menu__item" data-val="DE">11</li>
+                <li class="mdl-menu__item" data-val="BY">12</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-6 p-t-20">
+            <div
+            class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+            <input class="mdl-textfield__input" type="text" id="date" name="Intdate" value="{{value.Intdate}}">
+            <label class="mdl-textfield__label">Date of Completion</label>
+          </div>
+          </div>
+          <div class="col-lg-6 p-t-20">
+           <div
+              class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width"
+            >
+              <input class="mdl-textfield__input" type="text" id="txtRollNo" name="Intname" value="{{value.Intname}}" />
+              <label class="mdl-textfield__label">Name of the School</label>
+            </div>
+          </div>
+          <div class="col-lg-6 p-t-20">
+            <div
+              class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width"
+            >
+              <input class="mdl-textfield__input" type="text" id="txtRollNo" name="Intmarks" value="{{value.Intmarks}}" />
+              <label class="mdl-textfield__label">Marks Obtained</label>
+            </div>
+          </div>
+          <div class="col-lg-6 p-t-20">
+            <div
+              class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select getmdl-select__fix-height txt-full-width"
+            >
+              <input
+                class="mdl-textfield__input"
+                type="text"
+                id="list101"
+                readonly
+                tabindex="-1" name="Intgrading" value="{{value.Intgrading}}"
+              />
+              <label for="list101" class="pull-right margin-0">
+                <i class="mdl-icon-toggle__label material-icons"
+                  >keyboard_arrow_down</i
+                >
+              </label>
+              <label for="list101" class="mdl-textfield__label">Grading Scheme</label>
+              <ul
+                data-mdl-for="list101"
+                class="mdl-menu mdl-menu--bottom-left mdl-js-menu"
+              >
+                <li class="mdl-menu__item" data-val="DE">% Scale</li>
+                <li class="mdl-menu__item" data-val="BY">Points Scale</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-6 p-t-20">
+            <div
+              class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width"
+            >
+              <input
+                class="mdl-textfield__input"
+                type="file"
+                id="txtLasttName" name="IntDoc" value="{{value.IntDoc}}"
+              />
+              <a href="media/{{value.IntDoc}}">{{value.IntDoc}}</a>
+              <label class="mdl-textfield__label"></label>
+            </div>
+          </div>
+          
+
+          <h2>University </h2>
+          <div class="col-lg-6 p-t-20">
+            <div
+              class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select getmdl-select__fix-height txt-full-width"
+            >
+              <input
+                class="mdl-textfield__input"
+                type="text"
+                id="list121"
+                readonly
+                tabindex="-1" name="Uniqual" value="{{value.Uniqual}}"
+              />
+              <label for="list121" class="pull-right margin-0">
+                <i class="mdl-icon-toggle__label material-icons"
+                  >keyboard_arrow_down</i
+                >
+              </label>
+              <label for="list121" class="mdl-textfield__label">Qualification</label>
+              <ul
+                data-mdl-for="list121"
+                class="mdl-menu mdl-menu--bottom-left mdl-js-menu"
+              >
+                <li class="mdl-menu__item" data-val="DE">UG</li>
+                <li class="mdl-menu__item" data-val="BY">PG</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-6 p-t-20">
+            <div
+            class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+            <input class="mdl-textfield__input" type="text" id="date" name="Unidate" value="{{value.Unidate}}">
+            <label class="mdl-textfield__label">Date of Completion</label>
+          </div>
+          </div>
+          <div class="col-lg-6 p-t-20">
+           <div
+              class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width"
+            >
+              <input class="mdl-textfield__input" type="text" id="txtRollNo" name="Uniname" value="{{value.Uniname}}" />
+              <label class="mdl-textfield__label">Name of the School</label>
+            </div>
+          </div>
+          <div class="col-lg-6 p-t-20">
+            <div
+              class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width"
+            >
+              <input class="mdl-textfield__input" type="text" id="txtRollNo" name="Unimarks" value="{{value.Unimarks}}"/>
+              <label class="mdl-textfield__label">Marks Obtained</label>
+            </div>
+          </div>
+          <div class="col-lg-6 p-t-20">
+            <div
+              class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select getmdl-select__fix-height txt-full-width"
+            >
+              <input
+                class="mdl-textfield__input"
+                type="text"
+                id="list200"
+                readonly
+                tabindex="-1" name="Unigrading" value="{{value.Unigrading}}"
+              />
+              <label for="list200" class="pull-right margin-0">
+                <i class="mdl-icon-toggle__label material-icons"
+                  >keyboard_arrow_down</i
+                >
+              </label>
+              <label for="list200" class="mdl-textfield__label">Grading Scheme</label>
+              <ul
+                data-mdl-for="list200"
+                class="mdl-menu mdl-menu--bottom-left mdl-js-menu"
+              >
+                <li class="mdl-menu__item" data-val="DE">% Scale</li>
+                <li class="mdl-menu__item" data-val="BY">Points Scale</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-6 p-t-20">
+            <div
+              class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width"
+            >
+              <input
+                class="mdl-textfield__input"
+                type="file"
+                id="txtLasttName" name="UniDoc" value="{{value.UniDoc}}"
+              />
+              <a href="media/{{value.UniDoc}}">{{value.UniDoc}}</a>
+              <label class="mdl-textfield__label"></label>
+            </div>
+          </div>
+          <div class="col-lg-12 p-t-20">
+            <div
+              class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width"
+            >
+              <input
+                class="mdl-textfield__input"
+                type="text"
+                id="txtLasttName" name="Unicname" value="{{value.Unicname}}"
+              />
+              <label class="mdl-textfield__label">Course Name </label>
+            </div>
+          </div>
+
+
+          <div class="col-lg-12 p-t-20 text-center">
+          <a href="/stdind">
+          <button
+              type="button"
+              class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect m-b-10 btn-default"
+            >
+              Previous
+            </button>
+          </a>
+            <button
+              type="submit" onclick="myguru()"
+              class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect m-b-10 m-r-20 btn-pink"
+            >
+              Submit
+            </button>
+            <a href="/stdpro">
+            <button
+              type="button"
+              class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect m-b-10 btn-default"
+            >
+              Next
+            </button>
+          </a>
+          </div>
+        </div>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,11 @@
+<h2>Hola Student !!</h2>
+<form action="/charge/{{value.fee}}/{{value.id}}" method="post">
+    {% csrf_token %}
+<h3>Proceed with your payment of {{value.fee}}</h3>
+<script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+data-key="{{value.key}}"
+data-description="Application Fee"
+data-ammount="{{value.fee}}"
+data-locale="auto">
+</script>
+</form>

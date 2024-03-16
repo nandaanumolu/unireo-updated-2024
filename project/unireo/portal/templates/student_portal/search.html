@@ -1,0 +1,131 @@
+{% extends 'student_portal/student_nav.html' %} {% block content %}
+<div class="page-bar">
+  <div class="page-title-breadcrumb">
+    <div class=" pull-left">
+      <div class="page-title">Search</div>
+    </div>
+    <ol class="breadcrumb page-breadcrumb pull-right">
+      <li><i class="fa fa-home"></i>&nbsp;<a class="parent-item" href="/student/home">Home</a>&nbsp;<i
+          class="fa fa-angle-right"></i>
+      </li>
+
+      </li>
+      <li class="active">Search</li>
+    </ol>
+  </div>
+</div>
+<form className="mb-3" style="margin-bottom: 20px; display:flex;" action="/student/search" method="post">
+  {% csrf_token %}
+  <!-- <input type="text" class="form-control shadow-lg p-3 mb-5 bg-white " 
+    style="height: auto; width:80%;box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;" id="tags" aria-describedby="emailHelp" placeholder="Search university"> -->
+  <input type="text" placeholder="Search.." class="form-control shadow-lg p-3 mb-5 bg-white " name="search"
+    style="height: auto; width:80%;box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;">
+  <button type="submit" style="box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;
+    margin: 0px 10px !important;
+    border: 1px solid lightskyblue;
+    height: 50px;
+    width: 50px;
+    background: white;
+    border-radius: 5px;"><i class="fa fa-search"></i></button>
+
+</form>
+
+<div class="row">
+
+  <div class="col-lg-9">
+
+    <div class="row">
+
+      {% for i in search %}
+      <div class="col-md-4">
+        <div class="card card-box">
+          <div class="card-body no-padding ">
+            <div class="doctor-profile">
+              <img
+                src="https://media.gettyimages.com/photos/columbia-university-college-walk-picture-id157195136?s=612x612"
+                class="doctor-pic" alt="">
+              <div class="profile-usertitle">
+                <div class="doctor-name"> <a href="/student/course_overview">{{i.Firstname}}</a></div>
+
+                <div class="name-center">USA </div>
+              </div>
+              <p>A-103, shyam gokul flats, Mahatma Road <br />USA</p>
+              <div>
+                <p><i class="fa fa-phone"></i><a href="tel:{{i.Phonenumber}}"> {{i.Phonenumber}}</a></p>
+              </div>
+              <div class="profile-userbuttons text-center" style="display: flex;margin-left:40px">
+                <a href="/overview/{{i.Firstname}}" class="btn btn-circle blue-bgcolor btn-sm">Apply</a>
+                <form action="saved/{{i.Firstname}}/" method="post">
+                  {% csrf_token %}
+                  <a href="saved/{{i.Firstname}}/"><button
+                      class="btn btn-circle deepPink-bgcolor btn-sm">wishlist</button>
+                  </a>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+      {% endfor %}
+
+    </div >
+    </div>
+    <div class="col-lg-3">
+    <form action="/student/search" method="post">
+      {% csrf_token %}
+      <div >
+        <div class="sidebar-widgets-wrap">
+          <div class="widget widget-filter-links">
+            <h4>Filter by :</h4>
+            <h6>Country</h6>
+            <input type="text" name="country" class="form-control" />
+          </div>
+          <div class="widget widget-filter-links" style="padding-top: 0 !important">
+            <h6>Fee Range</h6>
+            <div class="row">
+              <div class="col-4">
+                <input type="text" name="" placeholder="min" class="form-control" />
+              </div>
+              <div class="col-3">to</div>
+              <div class="col-4">
+                <input type="text" name="" placeholder="max" class="form-control" />
+              </div>
+            </div>
+          </div>
+          <div class="widget widget-filter-links" style="padding-top: 0 !important">
+            <h6>Ranking Range</h6>
+            <div class="row">
+              <div class="col-4">
+                <input type="text" name="rankrange1" placeholder="min" class="form-control" />
+              </div>
+              <div class="col-3">to</div>
+              <div class="col-4">
+                <input type="text" name="rankrange2" placeholder="max" class="form-control" />
+              </div>
+            </div>
+          </div>
+          <div class="widget widget-filter-links" style="padding-top: 0 !important">
+            <h6>Courses</h6>
+            <input type="text" name="courses" class="form-control" />
+          </div>
+          <div class="text-center">
+            <button class="btn btn-circle blue-bgcolor btn-sm text-center mt-3 ml-3" type="submit">
+              Apply
+              </button>
+          </div>
+          
+        </div>
+    </form>
+    </div>
+  
+
+</div>
+</div>
+
+
+
+
+{% endblock %}

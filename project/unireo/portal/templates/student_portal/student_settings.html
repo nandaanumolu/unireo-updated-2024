@@ -1,0 +1,41 @@
+{% extends 'student_portal/student_nav.html' %}
+{% block content %}
+<div class="page-bar">
+    <div class="page-title-breadcrumb">
+        <div class=" pull-left">
+            <div class="page-title">Settings</div>
+        </div>
+        <ol class="breadcrumb page-breadcrumb pull-right">
+            <li><i class="fa fa-home"></i>&nbsp;<a class="parent-item" href="/student/home">Home</a>&nbsp;<i
+                    class="fa fa-angle-right"></i>
+            </li>
+            <li class="active">Settings</li>
+            
+        </ol>
+    </div>
+    
+</div>
+<div class="card">
+
+<div class="card-body row">
+									<div class="col-lg-6 p-t-20">
+										<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width is-upgraded" data-upgraded=",MaterialTextfield">
+											<input class="mdl-textfield__input" type="text" id="txtroll">
+											<label class="mdl-textfield__label">Roll No</label>
+										</div>
+									</div>
+									<div class="col-lg-6 p-t-20">
+										<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width is-upgraded" data-upgraded=",MaterialTextfield">
+											<input class="mdl-textfield__input" type="text" id="txtname">
+											<label class="mdl-textfield__label">Student Name</label>
+										</div>
+									</div>
+
+									<div class="col-lg-12 p-t-20 text-center">
+										<button type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect m-b-10 m-r-20 btn-pink" data-upgraded=",MaterialButton,MaterialRipple">Submit<span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></button>
+										<button type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect m-b-10 btn-default" data-upgraded=",MaterialButton,MaterialRipple">Cancel<span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></button>
+									</div>
+								</div>
+
+</div>
+{% endblock %}
