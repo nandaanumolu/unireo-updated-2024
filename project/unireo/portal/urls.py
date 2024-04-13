@@ -119,7 +119,8 @@ from .views.admin import universities
 from .views.admin import agent
 from .views.admin import commision
 from .views.admin import addcommision,adminlogin,adminlogout,addemployee
-
+from .views.payments import payment
+from .views.payments import charge
 
 
 urlpatterns=[
@@ -175,8 +176,8 @@ urlpatterns=[
     path('student/support',stu_support,name="home"),
     path('student/progress/<str:name>',progressbar,name='progress'),
 
-    # path('payment/<str:name>/<str:name1>',payment,name="payment"),
-    # path('charge/<str:name>/<str:name1>',charge,name="charge"),
+    path('payment/<str:name>/<str:name1>',payment,name="payment"),
+    path('charge/<str:name>/<str:name1>',charge,name="charge"),
 
     path('student/saved/<str:name>/',stdsaved.as_view(),name="saved"),
     path('student/search/<str:name>/',stu_search.as_view(),name="search"),

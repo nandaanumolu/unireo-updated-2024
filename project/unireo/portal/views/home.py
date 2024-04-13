@@ -76,7 +76,7 @@ def home(request):
     data['couper']=couper
     return render(request,'home_content.html',data)
 def table(request):
-    stddetail=Stdappli.objects.filter(univmail=request.session['Email']).filter(pstatus="succeeded")
+    stddetail=Stdappli.objects.filter(univmail=request.session['Email']).filter(pstatus="process")
     data={}
     data['stddetail']=stddetail
     return render(request,'All_Applications.html',data)

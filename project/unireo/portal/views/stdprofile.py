@@ -24,9 +24,7 @@ class stdind(View):
         data={}
         print(request.session['Email1'])
         student=Student.get_student_by_email(request.session['Email1'])
-        qwe="rty"
         print(student)
-        print(qwe)
         if(student):
             stdind=Stdind.get_stdind_by_email(student.Email)
         print(stdind)
@@ -536,6 +534,7 @@ class stdapplicour(View):
         
         savedappli=Stdappli(pstatus="process",id=id,stdname=stdname,univname=univname,stdmail=stdmail,univmail=univmail,
         date=date,program=program,status=status,agentmail=name2,Coursename=coursename,fee=fee)
+        print(univmail,university)
         try:
             saved=Stdappli.objects.filter(univmail=univmail).get(stdmail=stdmail)
             if(saved):

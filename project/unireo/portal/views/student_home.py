@@ -119,6 +119,7 @@ class stu_search(View):
         return render(request,'student_portal/search.html',data)
 def stu_applied(request):
     stddetail=Stdappli.objects.filter(stdmail=request.session['Email1'])
+    print(stddetail)
     data={}
     data['stddetail']=stddetail
     return render(request,'student_portal/applied.html',data)

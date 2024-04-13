@@ -38,5 +38,4 @@ class universitysignup(View):
         universitysignup.Password=make_password(universitysignup.Password)
         universitysignup.Confirmpassword=make_password(universitysignup.Confirmpassword)
         universitysignup.register()
-        print("aaaaaa")
         return redirect('universityloginpage')

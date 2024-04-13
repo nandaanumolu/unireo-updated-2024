@@ -61,6 +61,7 @@ class univdetail(View):
             'Email':Email,'Web':Web,'About':About,'Upload':url}
             data={'value':value}
             return render(request,'BasicInformation.html',data)
+
 class univcon(View):
     def get(self,request):
         data={}
@@ -150,6 +151,7 @@ class univcon(View):
         'Location':Location,'Link':Link,'Face':Face,'Insta':Insta,'Req':Req,'Features':Features,'Video':url1}
         data={'value':value}
         return render(request,'BasicInformation2.html',data)
+
 class univsecurity(View):
     def get(self,request):
         university1=University.get_university_by_email(request.session['Email'])
